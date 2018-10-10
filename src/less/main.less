@@ -1,0 +1,195 @@
+@import '_func.less';
+@import '_vars.less';
+@import '_fonts.less';
+
+// Prevent highlight on mobile
+* {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+    &:focus {
+        outline: 0;
+    }
+}
+
+/* плавное изменение прозрачности  placeholder-а при фокусе */
+.focus-fade {
+	&::placeholder {
+		color:#fff;
+		opacity: 1;
+		transition: opacity .3s ease;
+	}
+
+	&:focus::placeholder {
+		color: #000;
+		opacity: 0;
+		transition: opacity .3s ease;
+	}
+}
+
+/* сдвиг placeholder-а вправо при фокусе*/
+.focus-right {
+	&::placeholder {
+		color:#fff;
+		text-indent: 0px;
+		transition: text-indent .8s ease-in-out;
+	}
+
+	&:focus::placeholder {
+		color: #000;
+		text-indent: 100vw;
+		transition: text-indent 1.6s linear;
+	}
+}
+
+/* сдвиг placeholder-а вниз при фокусе*/
+.focus-bottom {
+	&::placeholder {
+		color:#fff;
+		line-height: normal;
+		transition: line-height 0.5s ease;
+	}
+
+	&:focus::placeholder {
+		color: #000;
+		line-height: 10;
+		transition: line-height 0.5s ease;
+	}
+}
+
+.overflow {
+    &-y {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    &-x {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+	height: 100%;
+	min-height: 100%;
+}
+
+body {
+	height: 100%;
+    // font-family: @font-robotoregular;
+    // font-family: @font-sfuidisplayregular;
+    font-family: @font-opensansregular;
+}
+
+a {
+	transition: all .3s;
+    &:visited,
+    &:hover,
+    &:focus,
+    &:active {
+        outline: none;
+        text-decoration: none;
+    }
+}
+
+
+// Уберем синюю дефолтную рамку вокруг контролов
+// и подчеркивание у активных ссылок,
+a,
+button,
+.control-button,
+.menu-button,
+.btn {
+    outline: none;
+    &:hover,
+    &:active,
+    &:focus,
+    &:active:focus {
+        outline: none;
+        text-decoration: none;
+    }
+}
+
+// а также у инпутов
+input,
+input[type=file],
+input[type=checkbox],
+input[type=radio] {
+	&:focus {
+		outline: none;
+	}
+}
+
+ul, ol {
+    list-style-type: none;
+    margin: 0;
+}
+
+.nav-menu {
+
+}
+
+.menu-link {
+	color: @link-color;
+	font-size: 12px;
+	&:hover {
+		color: @link-color-hover;
+		text-decoration: underline;
+	}
+}
+
+.header {
+	border-bottom: solid 2px #adbdd0;
+	height: 80px;
+
+	.header-title {
+		font-size: 26px;
+	}
+}
+
+.footer {
+	border-top: solid 2px #adbdd0;
+	height: 80px;
+
+	.rights {
+		color: @charcoal-grey;
+		font-size: 14px;
+	}
+}
+
+.help-info {
+	text-align: center;
+	span {
+
+	}
+}
+
+.mvs-app {
+	text-align: center;
+	.app-header {
+		text-align: center;
+	}
+
+	.app-title {
+		color: @charcoal-grey;
+		font-size: 32px;
+	}
+
+	.menu-link {
+		font-size: 14px;
+	}
+}
+
+.get-cert-ways {
+	margin: 40px 0;
+
+	.way-title {
+		color: #4a90e2;
+		margin: 6px 0;
+	}
+}
