@@ -1,5 +1,6 @@
 
 var gulp = require('gulp'),
+    babel = require('gulp-babel'),
 	del = require('del'),
 	less = require('gulp-less'),
 	autoprefixer = require('gulp-autoprefixer'),

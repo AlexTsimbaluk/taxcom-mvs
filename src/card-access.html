@@ -62,51 +62,52 @@
                             <img class="app-logo" src="img/logo-mvs.svg" alt="Taxcom-MVS">
 
                             <div class="app-title">
-                                Выберите способ<br> получения сертификата
+                                Введите параметры <br> доступа
                             </div>
                         </div>
 
                         <div class="app-main">
-                            <div class="get-cert-ways d-flex justify-content-between">
-                                <div class="way-item text-center">
-                                    <a class="" href="card-access.html">
-                                        <img src="img/get-card.svg" alt="Taxcom-MVS">
+                            <form action="" class="form-card-access">
+                                <div class="form-group">
+                                    <label for="email">Логин</label>
 
-                                        <div class="way-title">
-                                            Карточка доступа
-                                        </div>
-                                    </a>
-
-                                    <div class="help-info" data-toggle="tooltip" data-placement="top" title="Подсказка">
-                                        <span>
-                                            <img src="img/icon-help.svg" alt="Taxcom-MVS">
-                                        </span>
-                                    </div>
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        id="email"
+                                        autocomplete="false"
+                                    >
                                 </div>
 
-                                <div class="way-item text-center">
-                                    <a class="" href="">
-                                        <img src="img/get-cert.svg" alt="Taxcom-MVS">
+                                <div class="form-group">
+                                    <label for="password">Пароль</label>
 
-                                        <div class="way-title">
-                                            По сертификату
-                                        </div>
-                                    </a>
-
-                                    <div class="help-info" data-toggle="tooltip" data-placement="top" title="Подсказка">
-                                        <span>
-                                            <img src="img/icon-help.svg" alt="Taxcom-MVS">
-                                        </span>
-                                    </div>
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        id="password"
+                                        autocomplete="false"
+                                    >
                                 </div>
-                            </div>
+
+                                <div class="form-check">
+                                    <input
+                                        type="checkbox"
+                                        id="showHidePass"
+                                        class="form-check-input toggle-password"
+                                        data-toggle="password-show"
+                                        data-target="#password"
+                                    >
+
+                                    <label class="form-check-label w-100" for="showHidePass">Показать вводимые символы</label>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
                         </div>
 
                         <div class="app-footer">
-                            <a href="" class="menu-link">
-                                <img src="img/icon-print.svg" alt="Taxcom-MVS">
-                                Распечатать бланк сертификата
-                            </a>
+
                         </div>
                     </div>
                 </div>
