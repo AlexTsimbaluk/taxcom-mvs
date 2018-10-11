@@ -334,15 +334,15 @@ form {
 .mvs-app .app-header {
   text-align: center;
 }
+.mvs-app .app-main {
+  padding: 40px 0;
+}
 .mvs-app .app-title {
   color: #2b2e35;
   font-size: 32px;
 }
 .mvs-app .menu-link {
   font-size: 14px;
-}
-.get-cert-ways {
-  margin: 40px 0;
 }
 .get-cert-ways .way-title {
   color: #4a90e2;
