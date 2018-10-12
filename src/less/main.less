@@ -110,9 +110,45 @@ button,
     &:active,
     &:focus,
     &:active:focus {
+    	box-shadow: none;
         outline: none;
         text-decoration: none;
     }
+}
+
+.btn {
+	font-family: 'OpenSansSemiBold';
+	font-size: 14px;
+	padding: 13px 12px;
+	width: 240px;
+	// height: 50px;
+	&.button-sm {
+		width: 120px;
+	}
+
+	&.button-success {
+		border: 1px solid @button-success;
+	}
+
+	&.button-fill {
+		color: #fff;
+		&.button-success {
+			background: @button-success;
+			&:hover {
+				background: @button-success-hover;
+			}
+		}
+	}
+
+	&.button-outline {
+		background: #fff;
+		color: #000;
+		&.button-success {
+			&:hover {
+				border: 1px solid @button-success-hover;
+			}
+		}
+	}
 }
 
 // а также у инпутов

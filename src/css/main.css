@@ -271,8 +271,38 @@ button:active:focus,
 .control-button:active:focus,
 .menu-button:active:focus,
 .btn:active:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
   outline: none;
   text-decoration: none;
+}
+.btn {
+  font-family: 'OpenSansSemiBold';
+  font-size: 14px;
+  padding: 13px 12px;
+  width: 240px;
+}
+.btn.button-sm {
+  width: 120px;
+}
+.btn.button-success {
+  border: 1px solid #369927;
+}
+.btn.button-fill {
+  color: #fff;
+}
+.btn.button-fill.button-success {
+  background: #369927;
+}
+.btn.button-fill.button-success:hover {
+  background: #3ca92b;
+}
+.btn.button-outline {
+  background: #fff;
+  color: #000;
+}
+.btn.button-outline.button-success:hover {
+  border: 1px solid #3ca92b;
 }
 input:focus,
 input[type=file]:focus,
