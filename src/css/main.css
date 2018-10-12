@@ -288,6 +288,19 @@ ol {
 form {
   text-align: left;
 }
+.form-control {
+  border: solid 1px #adbdd0;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  width: 380px;
+  height: auto;
+  padding: 13px 10px;
+}
+.form-control:focus {
+  border-color: #adbdd0;
+  -webkit-box-shadow: 0 0px 4px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
 .form-group label,
 .form-group .form-control {
   color: #2b2e35;
@@ -304,6 +317,11 @@ form {
 .menu-link:hover {
   color: #008df0;
   text-decoration: underline;
+}
+.main-wrapper > .content {
+  min-height: -webkit-calc(100vh - 160px);
+  min-height: calc(100vh - 160px);
+  padding: 40px 0;
 }
 .header {
   border-bottom: solid 2px #adbdd0;

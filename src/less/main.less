@@ -134,6 +134,18 @@ form {
 	text-align: left;
 }
 
+.form-control {
+	border: solid 1px #adbdd0;
+	border-radius: 2px;
+	width: 380px;
+	height: auto;
+	padding: 13px 10px;
+	&:focus {
+		border-color: #adbdd0;
+		box-shadow: 0 0px 4px 0px rgba(0, 0, 0, 0.25);
+	}
+}
+
 .form-group {
 	label,
 	.form-control {
@@ -159,6 +171,14 @@ form {
 	&:hover {
 		color: @link-color-hover;
 		text-decoration: underline;
+	}
+}
+
+.main-wrapper {
+	// height: 100%;
+	> .content {
+		min-height: ~"calc(100vh - 160px)";
+		padding: 40px 0;
 	}
 }
 
@@ -209,8 +229,6 @@ form {
 }
 
 .get-cert-ways {
-	// margin: 40px 0;
-
 	.way-title {
 		color: #4a90e2;
 		margin: 6px 0;
