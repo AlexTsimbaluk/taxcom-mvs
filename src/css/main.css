@@ -322,7 +322,6 @@ form {
   border: solid 1px #adbdd0;
   -webkit-border-radius: 2px;
           border-radius: 2px;
-  width: 380px;
   height: auto;
   padding: 13px 10px;
 }
@@ -373,6 +372,7 @@ form {
 }
 .mvs-app {
   text-align: center;
+  width: 100%;
 }
 .mvs-app .app-header {
   text-align: center;
@@ -384,8 +384,26 @@ form {
   color: #2b2e35;
   font-size: 32px;
 }
+.mvs-app .app-title-descr {
+  color: #2b2e35;
+  font-size: 18px;
+  margin: 0;
+}
 .mvs-app .menu-link {
   font-size: 14px;
+}
+.mvs-app .table {
+  text-align: left;
+}
+.mvs-app .table tr:first-child td {
+  border-top: 0;
+  font-size: 14px;
+}
+.mvs-app .table td:first-child {
+  color: #656974;
+}
+.mvs-app .table td:last-child {
+  color: #2b2e35;
 }
 .get-cert-ways .way-title {
   color: #4a90e2;

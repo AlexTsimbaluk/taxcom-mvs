@@ -173,7 +173,7 @@ form {
 .form-control {
 	border: solid 1px #adbdd0;
 	border-radius: 2px;
-	width: 380px;
+	// width: 380px;
 	height: auto;
 	padding: 13px 10px;
 	&:focus {
@@ -246,6 +246,7 @@ form {
 
 .mvs-app {
 	text-align: center;
+	width: 100%;
 	.app-header {
 		text-align: center;
 	}
@@ -257,10 +258,37 @@ form {
 	.app-title {
 		color: @charcoal-grey;
 		font-size: 32px;
+		// margin: 0;
+	}
+
+	.app-title-descr {
+		color: @charcoal-grey;
+		font-size: 18px;
+		// margin-top: 6px;
+		margin: 0;
 	}
 
 	.menu-link {
 		font-size: 14px;
+	}
+
+	.table {
+		text-align: left;
+		tr:first-child {
+			td {
+				border-top: 0;
+				font-size: 14px;
+			}
+		}
+
+		td {
+			&:first-child {
+				color: @slate-grey;
+			}
+			&:last-child {
+				color: @charcoal-grey;
+			}
+		}
 	}
 }
 
