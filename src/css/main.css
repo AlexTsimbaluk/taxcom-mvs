@@ -313,6 +313,14 @@ button:active:focus,
 .btn.button-outline.button-success:hover {
   border: 1px solid #3ca92b;
 }
+.btn[disabled] {
+  background: #bcc8d0 !important;
+  border-color: #bcc8d0 !important;
+}
+.btn[disabled]:hover {
+  background: #bcc8d0 !important;
+  border-color: #bcc8d0 !important;
+}
 input:focus,
 input[type=file]:focus,
 input[type=checkbox]:focus,
@@ -426,7 +434,7 @@ form {
 .mvs-app .app-title-descr {
   color: #2b2e35;
   font-size: 18px;
-  margin: 0;
+  margin: 20px 0 0;
 }
 .mvs-app .menu-link {
   font-size: 14px;
