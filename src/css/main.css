@@ -244,6 +244,13 @@ a:active {
   outline: none;
   text-decoration: none;
 }
+.text-italic {
+  font-family: 'OpenSansItalic', sans-serif;
+}
+.text-size-16,
+.form-group label.text-size-16 {
+  font-size: 16px;
+}
 a,
 button,
 .control-button,
