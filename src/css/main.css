@@ -352,6 +352,40 @@ a:active {
 .text-muted {
   color: #677380 !important;
 }
+.modal.show .modal-dialog {
+  color: #2b2e35;
+  max-width: 660px;
+  margin: auto;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.modal.show .modal-header {
+  border: 0;
+  display: block;
+}
+.modal.show .modal-header .modal-title {
+  font-size: 32px;
+  line-height: normal;
+}
+.modal.show .modal-header .close {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}
+.modal.show .modal-body {
+  font-size: 18px;
+}
+.modal.show .modal-footer {
+  border: 0;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 50px;
+}
 a,
 button,
 .control-button,
@@ -397,6 +431,9 @@ button:active:focus,
 }
 .btn.button-sm {
   width: 120px;
+}
+.btn.button-md {
+  width: 170px;
 }
 .btn.button-success {
   border: 1px solid #369927;
