@@ -3,27 +3,32 @@ $(document).ready(function() {
 
 
     function validateField($input) {
+        var value = $input.val();
+        var type = $input.attr('data-type') ? $input.attr('data-type') : $input.attr('type');
+        var pattern;
         var errorMessage;
         var top = $input.position().top;
 
-        var value = $input.val();
-        var valid = true;
-        var pattern;
+        console.log(type);
 
-        if($input.attr('type') == 'text') {
+        var valid = true;
+
+        if(type == 'confirmation-code') {
+            // pattern = /\b\d{5}\b/;
+            pattern = /^\d{5}$/;
+            errorMessage = 'Введите пятизначный цифровой код';
+        } else if(type == 'text') {
             pattern = /^[A-Za-zА-Яа-яЁё][A-Za-zА-Яа-яЁё0-9\._-]{3,}$/;
             errorMessage = 'От 4 до 20 символов';
-        } else if($input.attr('type') == 'email') {
+        } else if(type == 'email') {
             pattern = /^[a-z0-9_-]+([\.a-z]+)?@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/i;
             errorMessage = 'Некорректный email';
-        } else if($input.attr('type') == 'password') {
-            pattern = /^[a-z][a-z0-9_-]{4,}$/i;
+        } else if(type == 'password') {
+            pattern = /^[a-z][a-z0-9_-\.]{4,}$/i;
             errorMessage = 'От 5 символов';
-        } else if($input.attr('type') == 'tel') {
+        } else if(type == 'tel') {
             errorMessage = 'Введите номер телефона без разделителей, скобок и дефисов';
-            // pattern = /(8|\+7)?\d{11,17}/;
-            pattern = /(\+7)?\d{11,17}/;
-            top = $input.position().top;
+            pattern = /^(\+7)?\d{11,17}$/;
         }
 
         if(value.search(pattern) == -1) {
