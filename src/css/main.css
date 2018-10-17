@@ -244,12 +244,23 @@ a:active {
   outline: none;
   text-decoration: none;
 }
+.link-color {
+  color: #0069b3;
+}
+.link-color-extra {
+  color: #1881d3;
+}
 .text-italic {
   font-family: 'OpenSansItalic', sans-serif;
 }
-.text-size-16,
-.form-group label.text-size-16 {
-  font-size: 16px;
+.text-size-16 {
+  font-size: 16px !important;
+}
+.text-size-18 {
+  font-size: 18px !important;
+}
+.text-muted {
+  color: #677380 !important;
 }
 a,
 button,
@@ -290,6 +301,9 @@ button:active:focus,
   font-size: 14px;
   padding: 13px 12px;
   width: 240px;
+}
+.btn.font-weight-normal {
+  font-family: 'OpenSans';
 }
 .btn.button-sm {
   width: 120px;
@@ -357,6 +371,11 @@ form {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+}
+.form-group.not-valid .form-control {
+  border: 1px solid rgba(255, 0, 0, 0.25);
+  -webkit-box-shadow: inset 0 0px 4px 0px rgba(255, 0, 0, 0.25);
+          box-shadow: inset 0 0px 4px 0px rgba(255, 0, 0, 0.25);
 }
 .form-check label {
   color: #0069b3;

@@ -72,12 +72,13 @@
                         </div>
 
                         <div class="app-main col-md-4 mx-auto">
-                            <form action="" class="form-card-access" role="form">
+                            <form action="" role="form">
                                 <div class="form-group">
                                     <input
                                         type="tel"
-                                        class="form-control"
+                                        class="form-control text-size-18"
                                         value="+7"
+                                        data-required="1"
                                     >
                                 </div>
 
@@ -95,7 +96,14 @@
 
                                 <div class="form-group d-flex justify-content-between">
                                     <a href="user-passport-data.html" class="btn button-sm button-success button-outline">Назад</a>
-                                    <button type="submit" class="btn button-success button-fill" disabled>Отправить</button>
+
+                                    <button
+                                        type="submit"
+                                        class="btn button-success button-fill"
+                                        disabled
+                                        data-disabled-button="1"
+                                        data-success-location="phone-code.html"
+                                    >Отправить</button>
                                 </div>
                             </form>
                         </div>

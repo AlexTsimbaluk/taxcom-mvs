@@ -10,10 +10,8 @@ $(document).ready(function() {
         var valid = true;
         var pattern;
 
-        console.log(value);
-
         if($input.attr('type') == 'text') {
-            pattern = /^[A-Za-zА-Яа-яЁё][A-Za-zА-Яа-яЁё0-9\._-]{3,19}$/;
+            pattern = /^[A-Za-zА-Яа-яЁё][A-Za-zА-Яа-яЁё0-9\._-]{3,}$/;
             errorMessage = 'От 4 до 20 символов';
         } else if($input.attr('type') == 'email') {
             pattern = /^[a-z0-9_-]+([\.a-z]+)?@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/i;
@@ -46,6 +44,29 @@ $(document).ready(function() {
         return valid;
     }
 
+    function validateForm() {
+        var valid = true;
+
+        $('[data-required]').each(function(index, element) {
+            var $input = $(element);
+            var $formGroup = $input.closest('.form-group');
+
+            valid = validateField($input);
+
+            if(!valid) {
+                if(!$formGroup.hasClass('not-valid')) {
+                    $formGroup.addClass('not-valid');
+                }
+            } else {
+                if($formGroup.hasClass('not-valid')) {
+                    $formGroup.removeClass('not-valid');
+                }
+            }
+        });
+
+        return valid;
+    }
+
 
 
 
@@ -62,25 +83,42 @@ $(document).ready(function() {
         return false;
     });
 
-    $('[data-pattern]').on('keyup', function() {
-        var $phone = $(this);
-        var valid;
-        var $submitButton = $('[type=submit]');
+    $('[data-required]').on('keyup', function() {
+        var $input = $(this);
+        var $formGroup = $input.closest('.form-group');
+        var $submitButton = $('[type=submit][data-disabled-button]');
 
-        if($phone.val().length > 1) {
-            valid = validateField($phone);
-        } else if($phone.val().length == 1) {
-            valid = validateField($phone);
+        var valid;
+
+        if($input.val().length > 1) {
+            valid = validateField($input);
+        } else if($input.val().length == 1) {
+            valid = validateField($input);
         }
 
         if(valid) {
-            $submitButton.removeAttr('disabled');
+            $submitButton && $submitButton.removeAttr('disabled');
+
+            if($formGroup.hasClass('not-valid')) {
+                $formGroup.removeClass('not-valid');
+            }
         } else {
-            $submitButton.attr('disabled', 'disabled');
+            $submitButton && $submitButton.attr('disabled', 'disabled');
+
+            if($formGroup.hasClass('not-valid')) {
+                $formGroup.addClass('not-valid');
+            }
         }
     });
 
-    /*$('[disabled]').on('click', function() {
-        console.log('disabled');
-    });*/
+    $('[type=submit]').on('click', function(event) {
+        event.preventDefault();
+
+        var $submit = $(this);
+        var successLocation = $submit.attr('data-success-location');
+
+        if(validateForm()) {
+            window.location.pathname = successLocation;
+        }
+    });
 });

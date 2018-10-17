@@ -73,7 +73,7 @@
                                     <label for="surname" class="col-sm-4 col-form-label">Фамилия</label>
 
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="surname">
+                                        <input data-required="1" type="text" class="form-control" id="surname">
                                     </div>
                                 </div>
 
@@ -81,7 +81,7 @@
                                     <label for="first-name" class="col-sm-4 col-form-label">Имя</label>
 
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="first-name">
+                                        <input data-required="1" type="text" class="form-control" id="first-name">
                                     </div>
                                 </div>
 
@@ -89,7 +89,7 @@
                                     <label for="middle-name" class="col-sm-4 col-form-label">Отчество</label>
 
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="middle-name">
+                                        <input data-required="1" type="text" class="form-control" id="middle-name">
                                     </div>
                                 </div>
 
@@ -196,7 +196,11 @@
 
                                 <div class="form-group d-flex justify-content-between col-md-8 p-0 mt-5 mx-auto">
                                     <a href="data-checking.html" class="btn button-sm button-success button-outline">Назад</a>
-                                    <button type="submit" class="btn button-success button-fill">Продолжить</button>
+                                    <button
+                                        type="submit"
+                                        class="btn button-success button-fill"
+                                        data-success-location="/notifications-phone.html"
+                                    >Продолжить</button>
                                 </div>
                             </form>
                         </div>

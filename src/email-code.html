@@ -67,39 +67,38 @@
                             </h1>
 
                             <h2 class="app-title-descr">
-                                Введите Вашу электронную почту. Она понадобится, чтобы связаться с вами<br> в случае прекращения действия сертификата.
+                                Введите код подтверждения, который был<br> отправлен на электронную почту
                             </h2>
+
+                            <div class="link-color text-size-18 mt-3">
+                                nikkeyart@gmail.com
+                            </div>
                         </div>
 
-                        <div class="app-main col-md-4 mx-auto">
+                        <div class="app-main col-md-4 mx-auto pt-4">
                             <form action="" role="form">
-                                <div class="form-group">
+                                <div class="form-group w-50 mx-auto">
                                     <input
                                         type="email"
-                                        class="form-control text-size-18"
+                                        class="form-control"
                                         data-required="1"
                                     >
                                 </div>
 
-                                <div class="form-group mb-5">
-                                    <p class="form-text text-muted text-center">
-                                        На этот адрес мы отправим письмо<br> с кодом подтверждения
-                                    </p>
-                                </div>
-
-                                <div class="form-group mb-4">
-                                    <p class="form-text text-muted text-center">
-                                        или <a href="notifications-phone.html">введите номер телефона</a>
-                                    </p>
+                                <div class="form-group mb-4 d-flex">
+                                    <button class="btn btn-link w-auto mx-auto font-weight-normal link-color-extra text-center repeat-send-code">
+                                        Отправить код повторно через 60 сек
+                                    </button>
                                 </div>
 
                                 <div class="form-group d-flex justify-content-between">
-                                    <a href="user-passport-data.html" class="btn button-sm button-success button-outline">Назад</a>
-                                    <!--
-                                        Тут серверная логика отправки формы и переадресация на index.html
-                                        data-next-route - success callback
-                                    -->
-                                    <button type="submit" class="btn button-success button-fill" data-success-location="email-code.html">Отправить</button>
+                                    <a href="notifications-email.html" class="btn button-sm button-success button-outline">Назад</a>
+
+                                    <button
+                                        type="submit"
+                                        class="btn button-success button-fill"
+                                        data-success-location=""
+                                    >Продолжить</button>
                                 </div>
                             </form>
                         </div>

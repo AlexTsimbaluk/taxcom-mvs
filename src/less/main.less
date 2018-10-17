@@ -95,12 +95,28 @@ a {
     }
 }
 
+.link-color {
+	color: @link-color;
+}
+
+.link-color-extra {
+	color: @link-color-extra;
+}
+
 .text-italic {
 	font-family: @font-opensansitalic;
 }
-.text-size-16,
-.form-group label.text-size-16 {
-	font-size: 16px;
+
+.text-size-16 {
+	font-size: 16px !important;
+}
+
+.text-size-18 {
+	font-size: 18px !important;
+}
+
+.text-muted {
+	color: @muted-color !important;
 }
 
 // Уберем синюю дефолтную рамку вокруг контролов
@@ -128,6 +144,10 @@ button,
 	padding: 13px 12px;
 	width: 240px;
 	// height: 50px;
+
+	&.font-weight-normal {
+		font-family: 'OpenSans';
+	}
 	&.button-sm {
 		width: 120px;
 	}
@@ -210,6 +230,13 @@ form {
 	&.row {
 		.row-align-center & {
 			align-items: center;
+		}
+	}
+
+	&.not-valid {
+		.form-control {
+			border: 1px solid rgba(255, 0, 0, 0.25);
+			box-shadow: inset 0 0px 4px 0px rgba(255, 0, 0, 0.25);
 		}
 	}
 }
