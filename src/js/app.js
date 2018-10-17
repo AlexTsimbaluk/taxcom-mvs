@@ -3,6 +3,15 @@
 $(document).ready(function () {
     'use strict';
 
+    $('.storage-item').on('click', function () {
+        var $storage = $(this);
+        if (!$storage.hasClass('selected')) {
+            $storage.closest('.storage-list').find('.storage-item.selected').removeClass('selected');
+
+            $storage.addClass('selected');
+        }
+    });
+
     function validateField($input) {
         var value = $input.val();
         var type = $input.attr('data-type') ? $input.attr('data-type') : $input.attr('type');

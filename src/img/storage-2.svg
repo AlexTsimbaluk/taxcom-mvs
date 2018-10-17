@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="66px" height="69px" viewBox="0 0 66 69" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>4A2E91C0-222B-458D-9EFA-6C4A529FE80C</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Design-1024" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="SelectDevice" transform="translate(-551.000000, -488.000000)">
+            <g id="Group-2" transform="translate(582.166667, 525.000000) scale(-1, 1) translate(-582.166667, -525.000000) translate(546.666667, 488.000000)">
+                <path d="M9.96625176,24.9662518 C9.69010939,24.9662518 9.46625176,25.1901094 9.46625176,25.4662518 L9.46625176,49.4662518 C9.46625176,49.7423941 9.69010939,49.9662518 9.96625176,49.9662518 L54.9662518,49.9662518 C61.8698111,49.9662518 67.4662518,44.3698111 67.4662518,37.4662518 C67.4662518,30.5626924 61.8698111,24.9662518 54.9662518,24.9662518 L9.96625176,24.9662518 Z" id="Rectangle-4" stroke="#4A90E2" stroke-width="3" transform="translate(38.466252, 37.466252) rotate(45.000000) translate(-38.466252, -37.466252) "></path>
+                <path d="M55.8847763,26.504311 C63.6167628,26.504311 69.6733585,32.5609067 69.6733585,40.2928932 C69.6733585,48.0248797 62.6022907,55.8492424 53.4099026,55.8492424 L11.1342533,55.7071068 L6.18019485,50.7530483" id="Rectangle-4-Copy" stroke="#4A90E2" stroke-width="3" transform="translate(37.926777, 41.176777) rotate(45.000000) translate(-37.926777, -41.176777) "></path>
+                <rect id="Rectangle-5" stroke="#4A90E2" stroke-width="3" transform="translate(12.993903, 12.493903) rotate(45.000000) translate(-12.993903, -12.493903) " x="5.99390335" y="4.99390335" width="14" height="15" rx="2"></rect>
+                <rect id="Rectangle-6" fill="#4A90E2" transform="translate(15.822330, 10.579690) rotate(45.000000) translate(-15.822330, -10.579690) " x="13.3223305" y="10.0796898" width="5" height="1"></rect>
+                <rect id="Rectangle-6-Copy" fill="#4A90E2" transform="translate(11.579690, 14.822330) rotate(45.000000) translate(-11.579690, -14.822330) " x="9.07968978" y="14.3223305" width="5" height="1"></rect>
+                <path d="" id="Path-2" stroke="#979797"></path>
+                <polyline id="Path-3" stroke="#4A90E2" stroke-width="3" points="2.5 13 2.5 19 8.5 25"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -2,6 +2,16 @@
 @import '_vars.less';
 @import '_fonts.less';
 
+// классы от .font-size-1 до .font-size-30
+// дают размеры шрифта от 0.1em до 3em
+.generate-font-size(@levels-font-size-count, @q: 1) when (@q =< @levels-font-size-count) {
+    .@{prop-font-name}-@{q} {
+        font-size: (0px + @q);
+    }
+    .generate-font-size(@levels-font-size-count, (@q + 1));
+}
+.generate-font-size(@levels-font-size-count);
+
 // Prevent highlight on mobile
 * {
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
@@ -77,6 +87,7 @@
 html {
 	height: 100%;
 	min-height: 100%;
+	// font-size: 14px;
 }
 
 body {
@@ -378,5 +389,45 @@ form {
 	.way-title {
 		color: #4a90e2;
 		margin: 6px 0;
+	}
+}
+
+.storage-list {
+	.storage-item {
+		border: solid 1px #eaeff4;
+		border-radius: 3px;
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		height: 325px;
+		padding: 20% 7% 10%;
+		&.selected {
+			background: #ffffff;
+			border: solid 1px #4a90e2;
+			box-shadow: 0 10px 10px 0 rgba(207, 207, 207, 0.5);
+			transition: all .3s;
+		}
+	}
+
+	.storage-image {}
+
+	.storage-title {
+		margin: 34px 0 0;
+		text-align: center;
+		.main-title {
+			color: @charcoal-grey;
+			font-size: 14px;
+		}
+
+		.extra-title {
+			color: #555861;
+			font-size: 13px;
+		}
+	}
+
+	.storage-extra {
+		align-items: center;
+		display: flex;
+		flex-grow: 1;
 	}
 }
