@@ -30,6 +30,13 @@ $(window).on('load', function() {
         }, 1000);
     })();
 
+    // progress-bar
+    $('.progress-bar').animate({
+        width: '100%'
+    }, 5000, function() {
+        location.pathname = 'cert-info.html';
+    });
+
     $('.storage-item').on('click', function() {
         var $storage = $(this);
         if(!$storage.hasClass('selected')) {

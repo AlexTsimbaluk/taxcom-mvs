@@ -405,6 +405,18 @@ input[type="number"] {
           justify-content: center;
   padding-bottom: 50px;
 }
+.progress {
+  background: #0069b3;
+  -webkit-border-radius: 0;
+          border-radius: 0;
+  height: 20px;
+  -webkit-transform: skew(-20deg);
+      -ms-transform: skew(-20deg);
+          transform: skew(-20deg);
+}
+.progress .progress-bar {
+  background: #369927;
+}
 a,
 button,
 .control-button,
@@ -703,4 +715,55 @@ form {
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.getting-cert-stages .cert-stage {
+  position: relative;
+}
+.getting-cert-stages .cert-stage:before {
+  background-repeat: no-repeat;
+  content: '';
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: -30px;
+  -webkit-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
+}
+.getting-cert-stages .cert-stage.stage-complete:before {
+  background-image: url('../img/icon-check.svg');
+}
+.getting-cert-stages .cert-stage.stage-execute:before {
+  -webkit-animation: rotate 1s linear infinite;
+          animation: rotate 1s linear infinite;
+  border: double 2px transparent;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)), radial-gradient(circle at top left, #ffffff, #ffb000);
+  background-image: linear-gradient(white, white), radial-gradient(circle at top left, #ffffff, #ffb000);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  width: 15px;
+  height: 15px;
+  top: 5px;
 }
