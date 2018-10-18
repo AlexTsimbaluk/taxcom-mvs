@@ -334,11 +334,19 @@ a:active {
   outline: none;
   text-decoration: none;
 }
+a,
 .link-color {
   color: #0069b3;
 }
+a:hover,
+.link-color:hover {
+  color: #005794;
+}
 .link-color-extra {
   color: #1881d3;
+}
+.link-color-extra:hover {
+  color: #1570b8;
 }
 .text-italic {
   font-family: 'OpenSansItalic', sans-serif;
@@ -537,7 +545,7 @@ form {
   font-size: 12px;
 }
 .menu-link:hover {
-  color: #008df0;
+  color: #005794;
   text-decoration: underline;
 }
 .main-wrapper > .content {

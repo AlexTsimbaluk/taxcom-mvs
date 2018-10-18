@@ -19,8 +19,6 @@ $(document).ready(function () {
         var errorMessage;
         var top = $input.position().top;
 
-        console.log(type);
-
         var valid = true;
 
         if (type == 'confirmation-code') {
@@ -37,8 +35,10 @@ $(document).ready(function () {
             pattern = /^[a-z][a-z0-9_-\.]{4,}$/i;
             errorMessage = 'От 5 символов';
         } else if (type == 'tel') {
+            console.log(phoneMaskInput);
+            value = phoneMaskInput.getRawValue();
             errorMessage = 'Введите номер телефона без разделителей, скобок и дефисов';
-            pattern = /^(\+7)?\d{11,17}$/;
+            pattern = /^(\+7)\d{10,}$/;
         }
 
         if (value.search(pattern) == -1) {
@@ -54,6 +54,8 @@ $(document).ready(function () {
             /*$input.removeClass('error');
             $input.prev('.errorTitle').css({'display':'none'});*/
         }
+
+        console.log(valid);
 
         return valid;
     }
@@ -132,4 +134,11 @@ $(document).ready(function () {
             window.location.pathname = successLocation;
         }
     });
+});
+'use strict';
+
+// https://github.com/nosir/cleave.js/blob/master/doc/public-methods.md
+var phoneMaskInput = new Cleave('[data-mask=phone]', {
+    phone: true,
+    phoneRegionCode: 'RU'
 });

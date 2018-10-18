@@ -106,12 +106,19 @@ a {
     }
 }
 
+a,
 .link-color {
 	color: @link-color;
+	&:hover {
+		color: @link-color-hover;
+	}
 }
 
 .link-color-extra {
 	color: @link-color-extra;
+	&:hover {
+		color: @link-color-extra-hover;
+	}
 }
 
 .text-italic {

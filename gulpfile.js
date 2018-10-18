@@ -75,7 +75,7 @@ gulp.task('less', function() {
 gulp.task('js', function() {
 	'use strict';
 	return gulp.src([
-				'src/js/main.js'
+				'src/js/*.js', '!src/js/app.js'
 			])
 			.pipe(babel())
 			.pipe(concat('app.js'))
@@ -98,7 +98,7 @@ gulp.task('watch', ['browser-sync'], function() {
 
     gulp.watch(
     	[
-    		'src/js/main.js'
+    		'src/js/*.js', '!src/js/app.js'
     	],
     	['js']
 	);
