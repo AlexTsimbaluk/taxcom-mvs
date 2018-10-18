@@ -3,8 +3,15 @@
 $(window).on('load', function () {
     'use strict';
 
-    // таймер для кнопки Отправить код повторно через 60 сек
+    // кастомные селекты
+    // https://github.com/selectize/selectize.js
 
+    $('[data-select=selectize]').selectize({
+        create: true,
+        sortField: 'text'
+    });
+
+    // таймер для кнопки Отправить код повторно через 60 сек
     (function () {
         var $buttonWithCounter = $('[data-disabled-counter]');
         var $counter = $buttonWithCounter.find('[data-counter]');

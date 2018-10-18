@@ -357,6 +357,40 @@ form {
 	}
 }
 
+.selectized {
+
+}
+
+// [class*="selectize-"],
+.selectize-control {
+	border: 0;
+	text-align: left;
+	.selectize-input {
+		font-size: 14px;
+		padding: 15px;
+	}
+
+	&.single {
+		.selectize-input {
+			&:after {
+				background-image: url('../img/select-normal-conner-down.svg');
+				background-repeat: no-repeat;
+				background-size: cover;
+				border: 0;
+				width: 12px;
+				height: 7px;
+				transition: transform .1s;
+			}
+
+			&.dropdown-active {
+				&:after {
+					transform: rotate(-180deg);
+				}
+			}
+		}
+	}
+}
+
 .menu-link {
 	color: @link-color;
 	font-size: 12px;

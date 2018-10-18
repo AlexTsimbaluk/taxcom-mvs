@@ -1,6 +1,13 @@
 $(window).on('load', function() {
     'use strict';
 
+    // кастомные селекты
+    // https://github.com/selectize/selectize.js
+    $('[data-select=selectize]').selectize({
+        create: true,
+        sortField: 'text'
+    });
+
     // таймер для кнопки Отправить код повторно через 60 сек
     (function() {
         var $buttonWithCounter = $('[data-disabled-counter]');

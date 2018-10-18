@@ -551,6 +551,31 @@ form {
   background-image: none;
   background-color: #369927;
 }
+.selectize-control {
+  border: 0;
+  text-align: left;
+}
+.selectize-control .selectize-input {
+  font-size: 14px;
+  padding: 15px;
+}
+.selectize-control.single .selectize-input:after {
+  background-image: url('../img/select-normal-conner-down.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 0;
+  width: 12px;
+  height: 7px;
+  -webkit-transition: -webkit-transform .1s;
+  transition: -webkit-transform .1s;
+  transition: transform .1s;
+  transition: transform .1s, -webkit-transform .1s;
+}
+.selectize-control.single .selectize-input.dropdown-active:after {
+  -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
 .menu-link {
   color: #0069b3;
   font-size: 12px;
