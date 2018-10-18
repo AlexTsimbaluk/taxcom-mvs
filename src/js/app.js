@@ -1,7 +1,28 @@
 'use strict';
 
-$(document).ready(function () {
+$(window).on('load', function () {
     'use strict';
+
+    // таймер для кнопки Отправить код повторно через 60 сек
+
+    (function () {
+        var $buttonWithCounter = $('[data-disabled-counter]');
+        var $counter = $buttonWithCounter.find('[data-counter]');
+        var time = +$counter.attr('data-counter-time');
+
+        $counter.text(time);
+
+        var countInterval = setInterval(function () {
+            if (time <= 0) {
+                clearInterval(countInterval);
+                $buttonWithCounter.removeAttr('disabled').html('Отправить код повторно');
+
+                return false;
+            }
+
+            $counter.text(--time);
+        }, 1000);
+    })();
 
     $('.storage-item').on('click', function () {
         var $storage = $(this);
@@ -23,7 +44,7 @@ $(document).ready(function () {
 
         if (type == 'confirmation-code') {
             // pattern = /\b\d{5}\b/;
-            pattern = /^\d{5}$/;
+            pattern = /^\d{5,}$/;
             errorMessage = 'Введите пятизначный цифровой код';
         } else if (type == 'text') {
             pattern = /^[A-Za-zА-Яа-яЁё][A-Za-zА-Яа-яЁё0-9\._-]{3,}$/;

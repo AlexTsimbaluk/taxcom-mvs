@@ -334,6 +334,9 @@ a:active {
   outline: none;
   text-decoration: none;
 }
+.default-color {
+  color: #2b2e35;
+}
 a,
 .link-color {
   color: #0069b3;
@@ -359,6 +362,14 @@ a:hover,
 }
 .text-muted {
   color: #677380 !important;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 .modal.show .modal-dialog {
   color: #2b2e35;
@@ -462,11 +473,11 @@ button:active:focus,
 .btn.button-outline.button-success:hover {
   border: 1px solid #3ca92b;
 }
-.btn[disabled] {
+.btn[disabled]:not(.btn-link) {
   background: #bcc8d0 !important;
   border-color: #bcc8d0 !important;
 }
-.btn[disabled]:hover {
+.btn[disabled]:not(.btn-link):hover {
   background: #bcc8d0 !important;
   border-color: #bcc8d0 !important;
 }
@@ -637,6 +648,10 @@ form {
           box-shadow: 0 10px 10px 0 rgba(207, 207, 207, 0.5);
   -webkit-transition: all .3s;
   transition: all .3s;
+}
+.storage-list .storage-item:hover {
+  -webkit-box-shadow: 0 0 8px 0 rgba(207, 207, 207, 0.5);
+          box-shadow: 0 0 8px 0 rgba(207, 207, 207, 0.5);
 }
 .storage-list .storage-title {
   margin: 34px 0 0;

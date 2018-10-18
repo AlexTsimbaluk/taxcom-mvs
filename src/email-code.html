@@ -87,8 +87,8 @@
                                 </div>
 
                                 <div class="form-group mb-4 d-flex">
-                                    <button class="btn btn-link w-auto mx-auto font-weight-normal link-color text-center repeat-send-code">
-                                        Отправить код повторно через 60 сек
+                                    <button class="btn btn-link w-auto mx-auto font-weight-normal link-color text-center repeat-send-code" data-disabled-counter="1" disabled>
+                                        Отправить код повторно через <span class="default-color font-weight-bold" data-counter="1" data-counter-time="60"></span> сек
                                     </button>
                                 </div>
 
@@ -98,6 +98,8 @@
                                     <button
                                         type="submit"
                                         class="btn button-success button-fill"
+                                        disabled
+                                        data-disabled-button="1"
                                         data-success-location="storage-selection.html"
                                     >Продолжить</button>
                                 </div>

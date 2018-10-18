@@ -106,6 +106,10 @@ a {
     }
 }
 
+.default-color {
+	color: @charcoal-grey;
+}
+
 a,
 .link-color {
 	color: @link-color;
@@ -135,6 +139,15 @@ a,
 
 .text-muted {
 	color: @muted-color !important;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
 }
 
 .modal {
@@ -237,7 +250,7 @@ button,
 		}
 	}
 
-	&[disabled] {
+	&[disabled]:not(.btn-link) {
 		background: #bcc8d0 !important;
 		border-color: #bcc8d0 !important;
 		&:hover {
@@ -457,6 +470,9 @@ form {
 			border: solid 1px #4a90e2;
 			box-shadow: 0 10px 10px 0 rgba(207, 207, 207, 0.5);
 			transition: all .3s;
+		}
+		&:hover {
+			box-shadow: 0 0 8px 0 rgba(207, 207, 207, 0.5);
 		}
 	}
 
