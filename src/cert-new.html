@@ -59,41 +59,71 @@
         <div class="content d-flex flex-column overflow-y justify-content-center">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="mvs-app col-md-6 mx-auto p-0">
-                        <div class="app-header">
+                    <div class="mvs-app p-0">
+                        <div class="app-header col-md-6 mx-auto">
                             <img class="app-logo" src="img/logo-mvs.svg" alt="Taxcom-MVS">
 
                             <h1 class="app-title">
-                                Получение сертификата
+                                Получение нового сертификата
                             </h1>
 
                             <h2 class="app-title-descr">
-                                Подпишите заявление и представьте его в офис «Такском»
+                                Продолжите выпуск сертификата или создайте новый
                             </h2>
                         </div>
 
-                        <div class="app-main d-flex flex-column align-items-center justify-content-between">
-                            <div class="link-block-wrapper mb-4">
-                                <div class="link-block text-center">
-                                    <a class="d-block" href="cert-new.html">
-                                        <img src="img/icon.svg" alt="Taxcom-MVS">
+                        <div class="app-main d-flex flex-column align-items-center justify-content-between col-md-8 mx-auto">
+                            <div class="table-responsive">
+                                <table class="table middle-cell table-lg">
+                                    <colgroup>
+                                        <col width="15%">
+                                        <col width="60%">
+                                        <col width="20%">
+                                        <col width="5%">
+                                    </colgroup>
 
-                                        <div class="link-title">
-                                            Открыть заявление
-                                        </div>
-                                    </a>
-                                </div>
+                                    <tbody>
+                                        <tr>
+                                            <th>Логин</th>
+                                            <th>Статус</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+
+                                        <tr class="border-top-0">
+                                            <td>GrushikhinNV</td>
+                                            <td>Требуется подпись заявления в офисе «Такском»</td>
+                                            <td>
+                                                <a href="cert-getting.html" class="btn button-success button-outline button-md text-success">Продолжить</a>
+                                            </td>
+                                            <td>
+                                                <div class="action-icon">
+                                                    <img src="img/icon-bag.svg" alt="Удалить">
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>GrushikhinNV</td>
+                                            <td>Заявление предоставлено</td>
+                                            <td>
+                                                <a href="cert-getting.html" class="btn button-success button-outline button-md text-success">Продолжить</a>
+                                            </td>
+                                            <td>
+                                                <div class="action-icon">
+                                                    <img src="img/icon-bag.svg" alt="Удалить">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
+                        </div>
 
-                            <p class="app-content">
-                                Подпишите заявление на выдачу сертификата, представьте его в офис обслуживания «Такском» вместе с комплексом подтверждающих документов и снова зайдите в мастер, чтобы получить сертификат.
-                            </p>
-
-                            <p class="app-content">
-                                Допустили ошибки в паспортных данных? <a class="link-color" href="">Отредактируйте их.</a><br>
-                                Возникли ошибки в других реквизитах<br>
-                                тел.: 8 495 730 7345
-                            </p>
+                        <div class="app-footer">
+                            <div class="form-group">
+                                <a href="" class="btn button-success button-fill">Новый запрос</a>
+                            </div>
                         </div>
                     </div>
                 </div>

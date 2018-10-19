@@ -211,6 +211,7 @@ input[type="number"] {
 				}
 				&:not(:first-child) {
 					color: @charcoal-grey;
+					font-size: 14px;
 				}
 			}
 		}
@@ -485,6 +486,10 @@ form {
 	}
 }
 
+.action-icon {
+	cursor: pointer;
+}
+
 .mvs-app {
 	text-align: center;
 	width: 100%;
@@ -502,19 +507,64 @@ form {
 
 	.table {
 		text-align: left;
-		tr:first-child {
-			td {
-				border-top: 0;
-				font-size: 14px;
+		&.table-lg {
+			td,
+			th {
+				padding: 20px .75rem;
+			}
+		}
+
+		tr {
+			&:first-child {
+				th {
+					border-top: 0;
+				}
+				td {
+					border-top: 0;
+				}
+			}
+		}
+
+		tr {
+			&.border-top-0 {
+				td,
+				th {
+					border-top: 0;
+				}
+			}
+		}
+
+		th {
+			color: #8a90a1;
+			font-size: 12px;
+			font-weight: normal;
+			text-transform: uppercase;
+			&:first-child {
+				padding-left: 0;
 			}
 		}
 
 		td {
+			font-size: 14px;
 			&:first-child {
 				color: @slate-grey;
+				padding-left: 0;
 			}
 			&:last-child {
 				color: @charcoal-grey;
+			}
+		}
+
+		&.middle-cell {
+			td {
+				vertical-align: middle;
+			}
+		}
+
+		.btn {
+			&.button-md {
+				padding: 9px 12px;
+				width: 140px;
 			}
 		}
 	}

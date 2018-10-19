@@ -427,6 +427,7 @@ input[type="number"] {
 }
 .modal.show .table td:not(:first-child) {
   color: #2b2e35;
+  font-size: 14px;
 }
 @media screen and (max-width: 992px) {
   .modal.modal-cert-detail .modal-content {
@@ -650,6 +651,9 @@ form {
 .help-info {
   text-align: center;
 }
+.action-icon {
+  cursor: pointer;
+}
 .mvs-app {
   text-align: center;
   width: 100%;
@@ -666,15 +670,45 @@ form {
 .mvs-app .table {
   text-align: left;
 }
+.mvs-app .table.table-lg td,
+.mvs-app .table.table-lg th {
+  padding: 20px .75rem;
+}
+.mvs-app .table tr:first-child th {
+  border-top: 0;
+}
 .mvs-app .table tr:first-child td {
   border-top: 0;
+}
+.mvs-app .table tr.border-top-0 td,
+.mvs-app .table tr.border-top-0 th {
+  border-top: 0;
+}
+.mvs-app .table th {
+  color: #8a90a1;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.mvs-app .table th:first-child {
+  padding-left: 0;
+}
+.mvs-app .table td {
   font-size: 14px;
 }
 .mvs-app .table td:first-child {
   color: #656974;
+  padding-left: 0;
 }
 .mvs-app .table td:last-child {
   color: #2b2e35;
+}
+.mvs-app .table.middle-cell td {
+  vertical-align: middle;
+}
+.mvs-app .table .btn.button-md {
+  padding: 9px 12px;
+  width: 140px;
 }
 .app-title {
   color: #2b2e35;
