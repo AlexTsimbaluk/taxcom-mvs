@@ -641,6 +641,11 @@ form {
   line-height: normal;
   margin: 20px 0 0;
 }
+.mvs-app .app-content {
+  color: #2b2e35;
+  font-size: 14px;
+  line-height: normal;
+}
 .mvs-app .menu-link {
   font-size: 14px;
 }
@@ -657,7 +662,7 @@ form {
 .mvs-app .table td:last-child {
   color: #2b2e35;
 }
-.get-cert-ways .way-title {
+.link-block-wrapper .link-title {
   color: #4a90e2;
   margin: 6px 0;
 }
