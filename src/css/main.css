@@ -363,6 +363,9 @@ a:hover,
 .text-muted {
   color: #677380 !important;
 }
+.c-pointer {
+  cursor: pointer;
+}
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -375,6 +378,7 @@ input[type="number"] {
   color: #2b2e35;
   max-width: 660px;
   margin: auto;
+  max-height: 100%;
   text-align: center;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -404,6 +408,33 @@ input[type="number"] {
       -ms-flex-pack: center;
           justify-content: center;
   padding-bottom: 50px;
+}
+.modal.show .table {
+  text-align: left;
+}
+.modal.show .table tr:first-child td {
+  border-top: 0;
+}
+.modal.show .table td {
+  vertical-align: middle;
+}
+.modal.show .table td:first-child {
+  color: #8a90a1;
+  font-size: 12px;
+  line-height: normal;
+  padding-left: 0;
+  text-transform: uppercase;
+}
+.modal.show .table td:not(:first-child) {
+  color: #2b2e35;
+}
+@media screen and (max-width: 992px) {
+  .modal.modal-cert-detail .modal-content {
+    min-width: 100%;
+  }
+  .modal.modal-cert-detail .modal-content .table {
+    min-width: 960px;
+  }
 }
 .progress {
   background: #0069b3;
@@ -629,23 +660,6 @@ form {
 .mvs-app .app-main {
   padding: 40px 0;
 }
-.mvs-app .app-title {
-  color: #2b2e35;
-  font-size: 32px;
-  line-height: normal;
-  margin-top: 30px;
-}
-.mvs-app .app-title-descr {
-  color: #2b2e35;
-  font-size: 18px;
-  line-height: normal;
-  margin: 20px 0 0;
-}
-.mvs-app .app-content {
-  color: #2b2e35;
-  font-size: 14px;
-  line-height: normal;
-}
 .mvs-app .menu-link {
   font-size: 14px;
 }
@@ -661,6 +675,23 @@ form {
 }
 .mvs-app .table td:last-child {
   color: #2b2e35;
+}
+.app-title {
+  color: #2b2e35;
+  font-size: 32px;
+  line-height: normal;
+  margin-top: 30px;
+}
+.app-title-descr {
+  color: #2b2e35;
+  font-size: 18px;
+  line-height: normal;
+  margin: 20px 0 0;
+}
+.app-content {
+  color: #2b2e35;
+  font-size: 14px;
+  line-height: normal;
 }
 .link-block-wrapper .link-title {
   color: #4a90e2;

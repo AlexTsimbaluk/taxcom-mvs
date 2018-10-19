@@ -5,6 +5,7 @@
     <title>Мастер выпуска сертификатов</title>
 
     <!-- CONFIG -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -22,18 +23,95 @@
 </head>
 
 <body>
+    <!-- Modal -->
+    <div class="modal fade modal-cert-detail" id="modal-cert-detail" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog mw-100" role="document">
+            <div class="container modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Состав сертификата</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <img src="img/close.svg" alt="Закрыть">
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <h2 class="app-title-descr">
+                        Удостоверяющий Центр ООО «Такском»
+                    </h2>
+
+                    <h2 class="app-title-descr text-muted">
+                        Копия сертификата ключа проверки электронной подписи
+                    </h2>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <colgroup>
+                                <col width="20%">
+                                <col width="20%">
+                                <col width="60%">
+                            </colgroup>
+
+                            <tbody>
+                                <tr>
+                                    <td>Кому выдан</td>
+                                    <td>Тестов тест</td>
+                                    <td>Такском</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Кем выдан</td>
+                                    <td colspan="2">«УЦ ООО «Такском»</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Версия</td>
+                                    <td colspan="2">3</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Версия</td>
+                                    <td colspan="2">78C1 E8E9 0000 0000 3479</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Издатель сертификата</td>
+                                    <td colspan="2">CN = «УЦ ООО «Такском», OU = Удостоверяющий центр, O = «ООО «Такском», L = Москва, S = Москва, С = RU, STREET = Варшавское шоссе, 33, INN = 7704211201, OGRN = 1027700071530</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Срок действия </td>
+                                    <td colspan="2">Действителен с:   22.09.2016  10:48:00</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Издатель сертификата</td>
+                                    <td colspan="2">SN = Тестов, G = Тест, T = Генеральный директор, STREET = «дор МКАД 60 км, 4А» O = «ООО «Такском», L = Москва, S = Москва, С = RU,  INN = 7704211201, OGRN = 1027700071530</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn button-success button-fill button-md" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="main-wrapper d-flex flex-column">
         <div class="header">
             <div class="container h-100">
                 <div class="row h-100">
-                    <nav class="header-nav d-flex align-items-center w-100">
+                    <nav class="header-nav d-flex align-items-center w-100 col">
                         <div class="header-logo mr-3">
                             <a href="/">
                                 <img src="img/logo-header.svg" alt="Такском">
                             </a>
                         </div>
 
-                        <div class="header-title ml-3">
+                        <div class="header-title ml-3 d-none d-md-block">
                             Мастер выпуска сертификата
                         </div>
 
@@ -73,14 +151,14 @@
 
                         <div class="app-main d-flex flex-column align-items-center justify-content-between">
                             <div class="link-block-wrapper mb-4">
-                                <div class="link-block text-center">
-                                    <a class="d-block" href="">
+                                <div class="link-block text-center c-pointer" data-toggle="modal" data-target="#modal-cert-detail">
+                                    <!-- <a class="d-block" data-toggle="modal" data-target="#modal-cert-detail"> -->
                                         <img src="img/icon.svg" alt="Taxcom-MVS">
 
                                         <div class="link-title">
                                             Посмотреть
                                         </div>
-                                    </a>
+                                    <!-- </a> -->
                                 </div>
                             </div>
 
@@ -103,7 +181,7 @@
 
         <div class="footer">
             <div class="container h-100">
-                <div class="row d-flex align-items-center h-100">
+                <div class="d-flex align-items-center h-100">
                     <div class="rights">
                         &copy; ООО &laquo;Такском&raquo;, 2000-2018
                     </div>
