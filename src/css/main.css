@@ -551,6 +551,9 @@ form {
   -webkit-box-shadow: 0 0px 4px 0px rgba(0, 0, 0, 0.25);
           box-shadow: 0 0px 4px 0px rgba(0, 0, 0, 0.25);
 }
+.form-control.find-cert {
+  width: 200px;
+}
 .form-group label,
 .form-group .form-control {
   color: #2b2e35;
@@ -566,6 +569,23 @@ form {
   border: 1px solid rgba(255, 0, 0, 0.25);
   -webkit-box-shadow: inset 0 0px 4px 0px rgba(255, 0, 0, 0.25);
           box-shadow: inset 0 0px 4px 0px rgba(255, 0, 0, 0.25);
+}
+.form-group.form-group-icon {
+  position: relative;
+}
+.form-group.form-group-icon:after {
+  background-image: url('../img/icon-search.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: '';
+  width: 15px;
+  height: 16px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 .form-check label {
   color: #0069b3;
@@ -709,6 +729,33 @@ form {
 .mvs-app .table .btn.button-md {
   padding: 9px 12px;
   width: 140px;
+}
+.mvs-app .table.cert-list th {
+  border-color: transparent;
+  text-transform: none;
+}
+.mvs-app .table.cert-list td {
+  border: 0;
+  padding: 12px;
+}
+.mvs-app .table.cert-list td:not(:nth-child(3)) {
+  color: #656974;
+}
+.mvs-app .table.cert-list .cert-selected {
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+  border-top: solid 1px #4a90e2 !important;
+  -webkit-box-shadow: 0 10px 10px 0 rgba(207, 207, 207, 0.5);
+          box-shadow: 0 10px 10px 0 rgba(207, 207, 207, 0.5);
+}
+.mvs-app .table.cert-list .cert-selected td {
+  border-bottom: solid 1px #4a90e2;
+}
+.mvs-app .table.cert-list .cert-selected td:first-child {
+  border-left: solid 1px #4a90e2;
+}
+.mvs-app .table.cert-list .cert-selected td:last-child {
+  border-right: solid 1px #4a90e2;
 }
 .app-title {
   color: #2b2e35;

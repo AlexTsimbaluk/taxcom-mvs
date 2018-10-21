@@ -344,6 +344,10 @@ form {
 		border-color: #adbdd0;
 		box-shadow: 0 0px 4px 0px rgba(0, 0, 0, 0.25);
 	}
+
+	&.find-cert {
+		width: 200px;
+	}
 }
 
 .form-group {
@@ -363,6 +367,22 @@ form {
 		.form-control {
 			border: 1px solid rgba(255, 0, 0, 0.25);
 			box-shadow: inset 0 0px 4px 0px rgba(255, 0, 0, 0.25);
+		}
+	}
+
+	&.form-group-icon {
+		position: relative;
+		&:after {
+			background-image: url('../img/icon-search.svg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			content: '';
+			width: 15px;
+			height: 16px;
+			position: absolute;
+			right: 10px;
+			top: 50%;
+			transform: translateY(-50%);
 		}
 	}
 }
@@ -565,6 +585,41 @@ form {
 			&.button-md {
 				padding: 9px 12px;
 				width: 140px;
+			}
+		}
+
+		&.cert-list {
+			tr {
+				th, td {
+					// border-top: 0;
+				}
+			}
+			th {
+				border-color: transparent;
+				text-transform: none;
+			}
+
+			td {
+				border: 0;
+				padding: 12px;
+				&:not(:nth-child(3)) {
+					color: @slate-grey;
+				}
+			}
+
+			.cert-selected {
+				border-radius: 3px;
+				border-top: solid 1px #4a90e2 !important;
+				box-shadow: 0 10px 10px 0 rgba(207, 207, 207, 0.5);
+				td {
+					border-bottom: solid 1px #4a90e2;
+					&:first-child {
+						border-left: solid 1px #4a90e2;
+					}
+					&:last-child {
+						border-right: solid 1px #4a90e2;
+					}
+				}
 			}
 		}
 	}
