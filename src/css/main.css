@@ -615,6 +615,21 @@ form {
   background-image: none;
   background-color: #369927;
 }
+.custom-checkbox .custom-control-input ~ .custom-control-label:before {
+  background: transparent;
+  border: 1px solid #adbdd0;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  width: 16px;
+  height: 16px;
+  top: 2px;
+}
+.custom-checkbox .custom-control-input ~ .custom-control-label:after {
+  top: 2px;
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label:before {
+  background: #369927;
+}
 .selectize-control {
   border: 0;
   text-align: left;
@@ -699,6 +714,11 @@ form {
 }
 .mvs-app .table {
   text-align: left;
+  /* &.middle-cell {
+			td {
+				vertical-align: middle;
+			}
+		} */
 }
 .mvs-app .table.table-lg td,
 .mvs-app .table.table-lg th {
@@ -732,9 +752,6 @@ form {
 }
 .mvs-app .table td:last-child {
   color: #2b2e35;
-}
-.mvs-app .table.middle-cell td {
-  vertical-align: middle;
 }
 .mvs-app .table .btn.button-md {
   padding: 9px 12px;
@@ -779,6 +796,9 @@ form {
           border-bottom-right-radius: 3px;
   -webkit-border-top-right-radius: 3px;
           border-top-right-radius: 3px;
+}
+.middle-cell td {
+  vertical-align: middle;
 }
 .app-title {
   color: #2b2e35;

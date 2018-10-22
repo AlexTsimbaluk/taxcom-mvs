@@ -429,6 +429,37 @@ form {
 	}
 }
 
+.custom-checkbox {
+	.custom-control-input {
+		~ .custom-control-label {
+			&:before {
+				background: transparent;
+				border: 1px solid #adbdd0;
+				border-radius: 5px;
+				width: 16px;
+				height: 16px;
+				top: 2px;
+			}
+
+			&:after {
+				top: 2px;
+			}
+		}
+
+		&:checked {
+			~ .custom-control-label {
+				&:before {
+					background: @button-success;
+				}
+
+				&:after {
+
+				}
+			}
+		}
+	}
+}
+
 .selectized {
 
 }
@@ -580,11 +611,11 @@ form {
 			}
 		}
 
-		&.middle-cell {
+		/* &.middle-cell {
 			td {
 				vertical-align: middle;
 			}
-		}
+		} */
 
 		.btn {
 			&.button-md {
@@ -638,6 +669,12 @@ form {
 				}
 			}
 		}
+	}
+}
+
+.middle-cell {
+	td {
+		vertical-align: middle;
 	}
 }
 
