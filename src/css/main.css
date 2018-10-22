@@ -516,6 +516,7 @@ button:active:focus,
 }
 .btn.button-outline.button-success:hover {
   border: 1px solid #3ca92b;
+  color: #3ca92b;
 }
 .btn[disabled]:not(.btn-link) {
   background: #bcc8d0 !important;
@@ -762,16 +763,31 @@ form {
   text-transform: none;
 }
 .mvs-app .table.cert-list td {
-  border: 0;
-  border-top-color: transparent;
   padding: 12px;
+}
+.mvs-app .table.cert-list td:first-child {
+  padding-right: 0;
 }
 .mvs-app .table.cert-list td:not(:nth-child(3)) {
   color: #656974;
 }
+.mvs-app .table.cert-list tr:nth-child(3).cert-item td {
+  border-top: solid 1px transparent;
+  border-top-color: transparent;
+  border-top: 0;
+}
+.mvs-app .table.cert-list tr:nth-child(3).cert-item.selected td {
+  border-top: solid 1px #4a90e2;
+}
 .mvs-app .table.cert-list .cert-item:not(.selected):hover {
   -webkit-box-shadow: 0 0 8px 0 rgba(207, 207, 207, 0.5);
           box-shadow: 0 0 8px 0 rgba(207, 207, 207, 0.5);
+}
+.mvs-app .table.cert-list .cert-item td {
+  border-top: solid 1px #c1cbd6;
+}
+.mvs-app .table.cert-list .cert-item:last-child td {
+  border-bottom: 0;
 }
 .mvs-app .table.cert-list .selected {
   -webkit-box-shadow: 0 10px 10px 0 rgba(207, 207, 207, 0.5);
@@ -780,7 +796,6 @@ form {
   transition: all .3s;
 }
 .mvs-app .table.cert-list .selected td {
-  border-bottom: solid 1px #c1cbd6;
   border-top: solid 1px #4a90e2;
 }
 .mvs-app .table.cert-list .selected td:first-child {
