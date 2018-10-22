@@ -742,6 +742,10 @@ form {
 .mvs-app .table.cert-list td:not(:nth-child(3)) {
   color: #656974;
 }
+.mvs-app .table.cert-list .cert-item:hover {
+  -webkit-box-shadow: 0 0 8px 0 rgba(207, 207, 207, 0.5);
+          box-shadow: 0 0 8px 0 rgba(207, 207, 207, 0.5);
+}
 .mvs-app .table.cert-list .selected {
   -webkit-box-shadow: 0 10px 10px 0 rgba(207, 207, 207, 0.5);
           box-shadow: 0 10px 10px 0 rgba(207, 207, 207, 0.5);
