@@ -79,7 +79,6 @@ $(window).on('load', function () {
             pattern = /^[a-z][a-z0-9_-\.]{4,}$/i;
             errorMessage = 'От 5 символов';
         } else if (type == 'tel') {
-            console.log(phoneMaskInput);
             value = phoneMaskInput.getRawValue();
             errorMessage = 'Введите номер телефона без разделителей, скобок и дефисов';
             pattern = /^(\+7)\d{10,}$/;
@@ -191,3 +190,7 @@ var phoneMaskInput = new Cleave('[data-mask=phone]', {
     phone: true,
     phoneRegionCode: 'RU'
 });
+
+phoneMaskInput.setRawValue('+7');
+
+$('[data-mask=phone]').trigger('focus');
