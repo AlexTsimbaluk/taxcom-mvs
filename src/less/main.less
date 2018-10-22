@@ -311,6 +311,14 @@ button,
 			border-color: #bcc8d0 !important;
 		}
 	}
+
+	// @media screen and (min-width: 576px) and (max-width: 1199px) {
+	@media screen and (max-width: 1199px) {
+		width: 63%;
+		&.button-sm {
+			width: 33%;
+		}
+	}
 }
 
 // а также у инпутов
@@ -523,6 +531,17 @@ form {
 
 	.header-title {
 		font-size: 26px;
+
+		@media screen and (max-width: 1023px) {
+			font-size: 18px;
+		}
+	}
+
+	@media screen and (max-width: 767px) {
+		.nav-menu {
+			align-items: flex-end;
+			flex-direction: column;
+		}
 	}
 }
 
@@ -552,6 +571,13 @@ form {
 	width: 100%;
 	.app-header {
 		text-align: center;
+
+		@media screen and (max-width: 767px) {
+			.app-logo {
+				width: 40px;
+				height: auto;
+			}
+		}
 	}
 
 	.app-main {
@@ -711,6 +737,11 @@ form {
 	font-size: 32px;
 	line-height: normal;
 	margin-top: 30px;
+
+	@media screen and (max-width: 767px) {
+		font-size: 24px;
+		margin-top: 6px;
+	}
 }
 
 .app-title-descr {
@@ -818,6 +849,15 @@ form {
 				height: 15px;
 				top: 5px;
 			}
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	[class*="col"] {
+		.px-0 {
+			padding-left: 15px !important;
+			padding-right: 15px !important;
 		}
 	}
 }
