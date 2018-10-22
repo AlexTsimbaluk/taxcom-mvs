@@ -49,6 +49,18 @@ $(window).on('load', function() {
         }
     });
 
+    $('.cert-list .cert-item').on('click', function() {
+        var $el = $(this);
+        if(!$el.hasClass('selected')) {
+            $el
+                .closest('.cert-list')
+                .find('.cert-item.selected')
+                .removeClass('selected');
+
+            $el.addClass('selected');
+        }
+    });
+
     function validateField($input) {
         var value = $input.val();
         var type = $input.attr('data-type') ? $input.attr('data-type') : $input.attr('type');
@@ -92,8 +104,6 @@ $(window).on('load', function() {
             /*$input.removeClass('error');
             $input.prev('.errorTitle').css({'display':'none'});*/
         }
-
-        console.log(valid);
 
         return valid;
     }

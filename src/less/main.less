@@ -601,23 +601,28 @@ form {
 
 			td {
 				border: 0;
+				border-top-color: transparent;
 				padding: 12px;
 				&:not(:nth-child(3)) {
 					color: @slate-grey;
 				}
 			}
 
-			.cert-selected {
-				border-radius: 3px;
-				border-top: solid 1px #4a90e2 !important;
+			.selected {
 				box-shadow: 0 10px 10px 0 rgba(207, 207, 207, 0.5);
+				transition: all .3s;
 				td {
-					border-bottom: solid 1px #4a90e2;
+					border-bottom: solid 1px #c1cbd6;
+					border-top: solid 1px #4a90e2;
 					&:first-child {
 						border-left: solid 1px #4a90e2;
+						border-bottom-left-radius: 3px;
+						border-top-left-radius: 3px;
 					}
 					&:last-child {
 						border-right: solid 1px #4a90e2;
+						border-bottom-right-radius: 3px;
+						border-top-right-radius: 3px;
 					}
 				}
 			}
