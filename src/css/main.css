@@ -679,14 +679,14 @@ form {
   padding: 40px 0;
 }
 .header {
-  border-bottom: solid 2px #adbdd0;
+  border-bottom: solid 1px #adbdd0;
   height: 80px;
 }
 .header .header-title {
   font-size: 26px;
 }
 .footer {
-  border-top: solid 2px #adbdd0;
+  border-top: solid 1px #adbdd0;
   height: 80px;
 }
 .footer .rights {
@@ -769,7 +769,7 @@ form {
 .mvs-app .table.cert-list td:not(:nth-child(3)) {
   color: #656974;
 }
-.mvs-app .table.cert-list .cert-item:hover {
+.mvs-app .table.cert-list .cert-item:not(.selected):hover {
   -webkit-box-shadow: 0 0 8px 0 rgba(207, 207, 207, 0.5);
           box-shadow: 0 0 8px 0 rgba(207, 207, 207, 0.5);
 }
@@ -846,7 +846,7 @@ form {
   -webkit-transition: all .3s;
   transition: all .3s;
 }
-.storage-list .storage-item:hover {
+.storage-list .storage-item:not(.selected):hover {
   -webkit-box-shadow: 0 0 8px 0 rgba(207, 207, 207, 0.5);
           box-shadow: 0 0 8px 0 rgba(207, 207, 207, 0.5);
 }

@@ -517,7 +517,7 @@ form {
 }
 
 .header {
-	border-bottom: solid 2px #adbdd0;
+	border-bottom: solid 1px #adbdd0;
 	height: 80px;
 
 	.header-title {
@@ -526,7 +526,7 @@ form {
 }
 
 .footer {
-	border-top: solid 2px #adbdd0;
+	border-top: solid 1px #adbdd0;
 	height: 80px;
 
 	.rights {
@@ -645,8 +645,10 @@ form {
 			}
 
 			.cert-item {
-				&:hover {
-					box-shadow: 0 0 8px 0 rgba(207, 207, 207, 0.5);
+				&:not(.selected) {
+					&:hover {
+						box-shadow: 0 0 8px 0 rgba(207, 207, 207, 0.5);
+					}
 				}
 			}
 
@@ -720,8 +722,11 @@ form {
 			box-shadow: 0 10px 10px 0 rgba(207, 207, 207, 0.5);
 			transition: all .3s;
 		}
-		&:hover {
-			box-shadow: 0 0 8px 0 rgba(207, 207, 207, 0.5);
+
+		&:not(.selected) {
+			&:hover {
+				box-shadow: 0 0 8px 0 rgba(207, 207, 207, 0.5);
+			}
 		}
 	}
 
