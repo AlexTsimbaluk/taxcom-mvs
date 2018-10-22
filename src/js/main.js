@@ -34,7 +34,8 @@ $(window).on('load', function() {
     $('.progress-bar').animate({
         width: '100%'
     }, 5000, function() {
-        location.pathname = 'cert-info.html';
+        // location.pathname = 'cert-info.html';
+        changeLocation('cert-info.html');
     });
 
     $('.storage-item').on('click', function() {
@@ -179,8 +180,23 @@ $(window).on('load', function() {
 
         var $submit = $(this);
 
-        // переход на другую страницу
-        var successLocation = $submit.attr('data-success-location');
+        changeLocation($submit.attr('data-success-location'));
+
+        /*var successLocation = $submit.attr('data-success-location');
+        var path = window.location.pathname;
+
+        path = path.split('/');
+        path[path.length - 1] = successLocation;
+        path = path.join('/');
+
+        if(validateForm()) {
+            window.location.pathname = path;
+        }*/
+    });
+
+    // переход на другую страницу
+    function changeLocation(path) {
+        var successLocation = path;
         var path = window.location.pathname;
 
         path = path.split('/');
@@ -190,5 +206,5 @@ $(window).on('load', function() {
         if(validateForm()) {
             window.location.pathname = path;
         }
-    });
+    }
 });
