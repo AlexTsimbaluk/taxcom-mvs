@@ -170,10 +170,17 @@ $(window).on('load', function () {
         event.preventDefault();
 
         var $submit = $(this);
+
+        // переход на другую страницу
         var successLocation = $submit.attr('data-success-location');
+        var path = window.location.pathname;
+
+        path = path.split('/');
+        path[path.length - 1] = successLocation;
+        path = path.join('/');
 
         if (validateForm()) {
-            window.location.pathname = successLocation;
+            window.location.pathname = path;
         }
     });
 });
