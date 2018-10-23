@@ -160,7 +160,7 @@ input[type="number"] {
 			color: @charcoal-grey;
 			max-width: 660px;
 			margin: auto;
-			max-height: 94%;
+			max-height: 100%;
 			text-align: center;
 			top: 50%;
 			transform: translateY(-50%);
@@ -172,6 +172,9 @@ input[type="number"] {
 			.modal-title {
 				font-size: 32px;
 				line-height: normal;
+				@media screen and (max-width: 767px) {
+					font-size: 26px;
+				}
 			}
 
 			.close {
@@ -218,13 +221,10 @@ input[type="number"] {
 	}
 
 	&.modal-cert-detail {
-		@media screen and (max-width: 992px) {
+		@media screen and (max-width: 991px) {
 			.modal-content {
 				min-width: 100%;
-
-				.table {
-					min-width: 960px;
-				}
+				padding: 0;
 			}
 		}
 	}
@@ -731,6 +731,20 @@ form {
 	}
 }
 
+.table {
+	&.table-width-xl {
+		min-width: 1140px;
+	}
+
+	&.table-width-lg {
+		min-width: 960px;
+	}
+
+	&.table-width-md {
+		min-width: 720px;
+	}
+}
+
 .middle-cell {
 	td {
 		vertical-align: middle;
@@ -754,6 +768,9 @@ form {
 	font-size: 18px;
 	line-height: normal;
 	margin: 20px 0 0;
+	@media screen and (max-width: 767px) {
+		font-size: 16px;
+	}
 }
 
 .app-content {
@@ -848,6 +865,9 @@ form {
 			position: absolute;
 			left: -30px;
 			transform: translateY(50%);
+			@media screen and (max-width: 575px) {
+				left: -20px;
+			}
 		}
 		&.stage-complete {
 			&:before {

@@ -378,7 +378,7 @@ input[type="number"] {
   color: #2b2e35;
   max-width: 660px;
   margin: auto;
-  max-height: 94%;
+  max-height: 100%;
   text-align: center;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -392,6 +392,11 @@ input[type="number"] {
 .modal.show .modal-header .modal-title {
   font-size: 32px;
   line-height: normal;
+}
+@media screen and (max-width: 767px) {
+  .modal.show .modal-header .modal-title {
+    font-size: 26px;
+  }
 }
 .modal.show .modal-header .close {
   position: absolute;
@@ -429,12 +434,10 @@ input[type="number"] {
   color: #2b2e35;
   font-size: 14px;
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
   .modal.modal-cert-detail .modal-content {
     min-width: 100%;
-  }
-  .modal.modal-cert-detail .modal-content .table {
-    min-width: 960px;
+    padding: 0;
   }
 }
 .modal-open .modal {
@@ -847,6 +850,15 @@ form {
   -webkit-border-top-right-radius: 3px;
           border-top-right-radius: 3px;
 }
+.table.table-width-xl {
+  min-width: 1140px;
+}
+.table.table-width-lg {
+  min-width: 960px;
+}
+.table.table-width-md {
+  min-width: 720px;
+}
 .middle-cell td {
   vertical-align: middle;
 }
@@ -867,6 +879,11 @@ form {
   font-size: 18px;
   line-height: normal;
   margin: 20px 0 0;
+}
+@media screen and (max-width: 767px) {
+  .app-title-descr {
+    font-size: 16px;
+  }
 }
 .app-content {
   color: #2b2e35;
@@ -974,6 +991,11 @@ form {
   -webkit-transform: translateY(50%);
       -ms-transform: translateY(50%);
           transform: translateY(50%);
+}
+@media screen and (max-width: 575px) {
+  .getting-cert-stages .cert-stage:before {
+    left: -20px;
+  }
 }
 .getting-cert-stages .cert-stage.stage-complete:before {
   background-image: url('../img/icon-check.svg');
