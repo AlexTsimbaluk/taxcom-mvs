@@ -35,7 +35,6 @@ $(window).on('load', function () {
     $('.progress-bar').animate({
         width: '100%'
     }, 5000, function () {
-        // location.pathname = 'cert-info.html';
         changeLocation('cert-info.html');
     });
 
