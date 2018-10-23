@@ -991,4 +991,15 @@ form {
     padding-left: 15px !important;
     padding-right: 15px !important;
   }
+  .number-sensor-image img {
+    height: 130px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .number-sensor-image {
+    width: 100%;
+  }
+  .number-sensor-image img {
+    height: 130px;
+  }
 }
