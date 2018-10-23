@@ -929,6 +929,12 @@ form {
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
+@media screen and (max-width: 1199px) {
+  .storage-list .storage-item {
+    margin-bottom: 40px;
+    max-width: 360px;
+  }
+}
 @-webkit-keyframes rotate {
   from {
     -webkit-transform: rotate(0deg);
