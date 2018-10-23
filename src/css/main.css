@@ -311,6 +311,46 @@
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
+@media (max-width: 575px) {
+  .overflow-xs-y {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .overflow-xs-x {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (max-width: 767px) {
+  .overflow-sm-y {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .overflow-sm-x {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (max-width: 991px) {
+  .overflow-md-y {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .overflow-md-x {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (max-width: 1199px) {
+  .overflow-lg-y {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .overflow-lg-x {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
 * {
   margin: 0;
   padding: 0;
