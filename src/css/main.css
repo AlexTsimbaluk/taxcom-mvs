@@ -378,7 +378,7 @@ input[type="number"] {
   color: #2b2e35;
   max-width: 660px;
   margin: auto;
-  max-height: 100%;
+  max-height: 94%;
   text-align: center;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -436,6 +436,9 @@ input[type="number"] {
   .modal.modal-cert-detail .modal-content .table {
     min-width: 960px;
   }
+}
+.modal-open .modal {
+  overflow-y: hidden;
 }
 .progress {
   background: #0069b3;
@@ -527,10 +530,10 @@ button:active:focus,
   border-color: #bcc8d0 !important;
 }
 @media screen and (max-width: 1199px) {
-  .btn {
+  .button-group .btn {
     width: 63%;
   }
-  .btn.button-sm {
+  .button-group .btn.button-sm {
     width: 33%;
   }
 }
@@ -935,6 +938,9 @@ form {
     max-width: 360px;
   }
 }
+.links-list a {
+  margin-bottom: 16px;
+}
 @-webkit-keyframes rotate {
   from {
     -webkit-transform: rotate(0deg);
@@ -987,7 +993,7 @@ form {
   top: 5px;
 }
 @media screen and (max-width: 767px) {
-  [class*="col"] .px-0 {
+  [class*="col-"].px-0 {
     padding-left: 15px !important;
     padding-right: 15px !important;
   }

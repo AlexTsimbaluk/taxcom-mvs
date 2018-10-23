@@ -160,7 +160,7 @@ input[type="number"] {
 			color: @charcoal-grey;
 			max-width: 660px;
 			margin: auto;
-			max-height: 100%;
+			max-height: 94%;
 			text-align: center;
 			top: 50%;
 			transform: translateY(-50%);
@@ -227,6 +227,10 @@ input[type="number"] {
 				}
 			}
 		}
+	}
+
+	.modal-open & {
+		overflow-y: hidden;
 	}
 }
 
@@ -312,11 +316,12 @@ button,
 		}
 	}
 
-	// @media screen and (min-width: 576px) and (max-width: 1199px) {
-	@media screen and (max-width: 1199px) {
-		width: 63%;
-		&.button-sm {
-			width: 33%;
+	.button-group & {
+		@media screen and (max-width: 1199px) {
+			width: 63%;
+			&.button-sm {
+				width: 33%;
+			}
 		}
 	}
 }
@@ -817,6 +822,12 @@ form {
 	}
 }
 
+.links-list {
+	a {
+		margin-bottom: 16px;
+	}
+}
+
 @keyframes rotate {
 	from {
 		transform: rotate(0deg);
@@ -861,8 +872,8 @@ form {
 }
 
 @media screen and (max-width: 767px) {
-	[class*="col"] {
-		.px-0 {
+	[class*="col-"] {
+		&.px-0 {
 			padding-left: 15px !important;
 			padding-right: 15px !important;
 		}
