@@ -961,6 +961,7 @@ form {
     position: absolute;
     left: 34px;
     top: -6px;
+    top: 0;
   }
   .mvs-app .table.table-adaptive .cert-item td:nth-child(2):before {
     content: 'Организация и владелец';
