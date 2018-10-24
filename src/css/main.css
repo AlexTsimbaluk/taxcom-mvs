@@ -733,6 +733,13 @@ form {
   min-height: calc(100vh - 160px);
   padding: 40px 0;
 }
+@media screen and (max-width: 767px) {
+  .main-wrapper > .content {
+    min-height: -webkit-calc(100vh - 140px);
+    min-height: calc(100vh - 140px);
+    padding: 30px 0 0;
+  }
+}
 .header {
   border-bottom: solid 1px #adbdd0;
   height: 80px;
@@ -762,6 +769,11 @@ form {
   border-top: solid 1px #adbdd0;
   height: 80px;
 }
+@media screen and (max-width: 767px) {
+  .footer {
+    height: 60px;
+  }
+}
 .footer .rights {
   color: #2b2e35;
   font-size: 14px;
@@ -787,6 +799,11 @@ form {
 }
 .mvs-app .app-main {
   padding: 40px 0;
+}
+@media screen and (max-width: 767px) {
+  .mvs-app .app-main {
+    padding: 40px 0 20px;
+  }
 }
 .mvs-app .menu-link {
   font-size: 14px;

@@ -583,6 +583,10 @@ form {
 	> .content {
 		min-height: ~"calc(100vh - 160px)";
 		padding: 40px 0;
+		@media screen and (max-width: 767px) {
+			min-height: ~"calc(100vh - 140px)";
+			padding: 30px 0 0;
+		}
 	}
 }
 
@@ -609,6 +613,10 @@ form {
 .footer {
 	border-top: solid 1px #adbdd0;
 	height: 80px;
+
+	@media screen and (max-width: 767px) {
+		height: 60px;
+	}
 
 	.rights {
 		color: @charcoal-grey;
@@ -643,6 +651,9 @@ form {
 
 	.app-main {
 		padding: 40px 0;
+		@media screen and (max-width: 767px) {
+			padding: 40px 0 20px;
+		}
 	}
 
 	.menu-link {
