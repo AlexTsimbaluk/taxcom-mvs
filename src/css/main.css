@@ -684,6 +684,7 @@ form {
 }
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label:before {
   background: #369927;
+  border: 0;
 }
 .selectize-control {
   border: 0;
@@ -744,6 +745,11 @@ form {
   border-bottom: solid 1px #adbdd0;
   height: 80px;
 }
+@media screen and (max-width: 767px) {
+  .header .header-logo img {
+    height: 20px;
+  }
+}
 .header .header-title {
   color: #2b2e35;
   font-size: 26px;
@@ -788,7 +794,7 @@ form {
   padding: 4px 6px;
   width: 40px;
   min-width: 40px;
-  height: 29px;
+  height: 22px;
   position: relative;
   z-index: 11;
   -webkit-transition: all 0.3s;
@@ -796,9 +802,9 @@ form {
 }
 .toggle-nav span {
   display: block;
-  height: 1px;
+  height: 2px;
   background-color: #0069b3;
-  margin: 9px 0 0;
+  margin: 4px 0 0;
 }
 .toggle-nav span.first {
   margin-top: 0;
@@ -812,9 +818,9 @@ form {
           transform: rotate(0deg) scale(0.9) skew(0deg) translateX(0px) translateY(0px);
 }
 .menu-visible .toggle-nav .first {
-  -webkit-transform: rotate(45deg) scale(1.4) skew(0deg) translateX(5px) translateY(3px);
-      -ms-transform: rotate(45deg) scale(1.4) skew(0deg) translateX(5px) translateY(3px);
-          transform: rotate(45deg) scale(1.4) skew(0deg) translateX(5px) translateY(3px);
+  -webkit-transform: rotate(45deg) scale(1.4) skew(0deg) translateX(4px) translateY(3px);
+      -ms-transform: rotate(45deg) scale(1.4) skew(0deg) translateX(4px) translateY(3px);
+          transform: rotate(45deg) scale(1.4) skew(0deg) translateX(4px) translateY(3px);
 }
 .menu-visible .toggle-nav .second {
   -webkit-transform: rotate(0deg) scale(1) skew(0deg) translateX(0) translateY(-12px);
@@ -825,9 +831,9 @@ form {
   margin: 0;
 }
 .menu-visible .toggle-nav .third {
-  -webkit-transform: rotate(-45deg) scale(1.4) skew(0deg) translateX(22px) translateY(-20px);
-      -ms-transform: rotate(-45deg) scale(1.4) skew(0deg) translateX(22px) translateY(-20px);
-          transform: rotate(-45deg) scale(1.4) skew(0deg) translateX(22px) translateY(-20px);
+  -webkit-transform: rotate(-45deg) scale(1.4) skew(0deg) translateX(20px) translateY(-20px);
+      -ms-transform: rotate(-45deg) scale(1.4) skew(0deg) translateX(20px) translateY(-20px);
+          transform: rotate(-45deg) scale(1.4) skew(0deg) translateX(20px) translateY(-20px);
 }
 .menu-visible .toggle-nav:hover {
   -webkit-transform: rotate(0deg) scale(0.8) skew(0deg) translateX(0px) translateY(0px);

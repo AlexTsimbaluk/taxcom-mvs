@@ -520,6 +520,7 @@ form {
 			~ .custom-control-label {
 				&:before {
 					background: @button-success;
+					border: 0;
 				}
 
 				&:after {
@@ -590,6 +591,14 @@ form {
 	border-bottom: solid 1px #adbdd0;
 	height: 80px;
 
+	.header-logo {
+		@media screen and (max-width: 767px) {
+			img {
+				height: 20px;
+			}
+		}
+	}
+
 	.header-title {
 		color: @charcoal-grey;
 		font-size: 26px;
@@ -624,18 +633,18 @@ form {
 	padding: 4px 6px;
 	width: 40px;
 	min-width: 40px;
-	height: 29px;
+	height: 22px;
 	position: relative;
 	z-index: 11;
 	transition: all 0.3s;
 
 	span {
-		display:block;
-		height:1px;
+		display: block;
+		height: 2px;
 		background-color: @link-color;
-		margin:9px 0 0;
+		margin: 4px 0 0;
 		&.first {
-			margin-top:0
+			margin-top: 0
 		}
 	}
 }
@@ -647,7 +656,7 @@ form {
 		transform:rotate(0deg) scale(.9) skew(0deg) translateX(0px) translateY(0px);
 
 		.first {
-			transform:rotate(45deg) scale(1.4) skew(0deg) translateX(5px) translateY(3px);
+			transform:rotate(45deg) scale(1.4) skew(0deg) translateX(4px) translateY(3px);
 		}
 
 		.second {
@@ -658,7 +667,7 @@ form {
 		}
 
 		.third {
-			transform:rotate(-45deg) scale(1.4) skew(0deg) translateX(22px) translateY(-20px);
+			transform:rotate(-45deg) scale(1.4) skew(0deg) translateX(20px) translateY(-20px);
 		}
 
 		&:hover {
