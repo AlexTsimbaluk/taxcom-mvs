@@ -1,6 +1,16 @@
 $(window).on('load', function() {
     'use strict';
 
+    // меню в шапке
+    $('.toggle-nav').on('click', function(e) {
+        if(!$('body').hasClass('menu-visible')) {
+            $('body').addClass('menu-visible');
+        }
+        else {
+            $('body').removeClass('menu-visible');
+        }
+    });
+
     // кастомные селекты
     // https://github.com/selectize/selectize.js
     $('[data-select=selectize]').selectize({
