@@ -813,14 +813,13 @@ form {
 }
 .mvs-app .table {
   text-align: left;
-  /* &.middle-cell {
-			td {
-				vertical-align: middle;
-			}
-		} */
 }
 @media screen and (max-width: 991px) {
+  .mvs-app .table.table-adaptive {
+    margin-bottom: 0;
+  }
   .mvs-app .table.table-adaptive tr {
+    border-top: 1px solid #dee2e6;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -830,7 +829,7 @@ form {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding-top: 20px;
+    padding: 6px 0;
   }
   .mvs-app .table.table-adaptive tr:first-child td {
     padding: 0 12px 24px !important;
@@ -838,6 +837,10 @@ form {
   .mvs-app .table.table-adaptive th,
   .mvs-app .table.table-adaptive td {
     display: block;
+  }
+  .mvs-app .table.table-adaptive td {
+    border: 0 !important;
+    padding: 6px 0;
   }
   .mvs-app .table.table-adaptive .cert-item td {
     padding-top: 20px;
@@ -874,10 +877,24 @@ form {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
+  .mvs-app .table.table-adaptive[class*="table-width-"] {
+    min-width: 100%;
+  }
 }
-.mvs-app .table.table-lg td,
-.mvs-app .table.table-lg th {
-  padding: 20px .75rem;
+.mvs-app .table.table-lg {
+  /* &.table-adaptive {
+				@media screen and (max-width: 991px) {
+					td {
+						padding: 12px 0;
+					}
+				}
+			} */
+}
+@media screen and (min-width: 992px) {
+  .mvs-app .table.table-lg td,
+  .mvs-app .table.table-lg th {
+    padding: 20px .75rem;
+  }
 }
 .mvs-app .table tr:first-child th {
   border-top: 0;
@@ -970,6 +987,7 @@ form {
 @media screen and (max-width: 991px) {
   .mvs-app .table.cert-list.table-adaptive .cert-item {
     border-top: solid 1px #c1cbd6;
+    padding-top: 20px;
   }
   .mvs-app .table.cert-list.table-adaptive .cert-item td {
     border: 0;
@@ -1001,9 +1019,6 @@ form {
     -webkit-border-radius: 0;
             border-radius: 0;
     border: 0;
-  }
-  .mvs-app .table.cert-list.table-adaptive[class*="table-width-"] {
-    min-width: 100%;
   }
 }
 .table.table-width-xl {
