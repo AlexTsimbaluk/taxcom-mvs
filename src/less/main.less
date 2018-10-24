@@ -666,6 +666,78 @@ form {
 
 	.table {
 		text-align: left;
+
+		&.table-adaptive {
+			@media screen and (max-width: 991px) {
+				tr {
+					display: flex;
+					flex-direction: column;
+					padding-top: 20px;
+
+					&:first-child {
+						td {
+							padding: 0 12px 24px !important;
+						}
+					}
+				}
+
+				th,
+				td {
+					display: block;
+				}
+
+				.cert-item {
+					td {
+						padding-top: 20px;
+
+						&:first-child {
+							position: absolute;
+							~ td {
+								padding-left: 34px;
+							}
+						}
+
+						&:not(:first-child) {
+							position: relative;
+							&:before {
+								color: #8a90a1;
+								font-size: 12px;
+								font-weight: normal;
+								position: absolute;
+								left: 34px;
+								top: -6px;
+							}
+						}
+
+						&:nth-child(2) {
+							&:before {
+								content: 'Организация и владелец';
+							}
+						}
+
+						&:nth-child(3) {
+							&:before {
+								content: 'Кем выдан';
+							}
+						}
+
+						&:nth-child(4) {
+							&:before {
+								content: 'Дата истечения сертификата';
+							}
+						}
+					}
+
+					td {
+						> .d-flex {
+							justify-content: space-between;
+						}
+					}
+				}
+
+			}
+		}
+
 		&.table-lg {
 			td,
 			th {
@@ -779,23 +851,73 @@ form {
 						border-bottom: 0;
 					}
 				}
+
+				&.selected {
+					box-shadow: 0 10px 10px 0 rgba(207, 207, 207, 0.5);
+					transition: all .3s;
+					td {
+						border-top: solid 1px #4a90e2;
+						border-bottom: solid 1px #4a90e2;
+						&:first-child {
+							border-left: solid 1px #4a90e2;
+							border-bottom-left-radius: 3px;
+							border-top-left-radius: 3px;
+						}
+						&:last-child {
+							border-right: solid 1px #4a90e2;
+							border-bottom-right-radius: 3px;
+							border-top-right-radius: 3px;
+						}
+					}
+				}
 			}
 
-			.selected {
-				box-shadow: 0 10px 10px 0 rgba(207, 207, 207, 0.5);
-				transition: all .3s;
-				td {
-					border-top: solid 1px #4a90e2;
-					border-bottom: solid 1px #4a90e2;
-					&:first-child {
-						border-left: solid 1px #4a90e2;
-						border-bottom-left-radius: 3px;
-						border-top-left-radius: 3px;
+
+			&.table-adaptive {
+				@media screen and (max-width: 991px) {
+					.cert-item {
+						border-top: solid 1px #c1cbd6;
+
+						td {
+							border: 0;
+						}
+
+						&:nth-child(3) {
+							&.cert-item {
+								td {
+									border-top: solid 1px transparent;
+									border-top-color: transparent;
+									border-top: 0;
+								}
+
+								&.selected {
+									td {
+										border: 0;
+									}
+								}
+							}
+						}
+
+						&.selected {
+							border: solid 1px #4a90e2;
+							border-radius: 3px;
+							td {
+								border-radius: 0;
+								border: 0;
+								&:first-child {
+									border-radius: 0;
+									border: 0;
+								}
+								&:last-child {
+									border-radius: 0;
+								border: 0;
+								}
+							}
+						}
 					}
-					&:last-child {
-						border-right: solid 1px #4a90e2;
-						border-bottom-right-radius: 3px;
-						border-top-right-radius: 3px;
+
+					&[class*="table-width-"] {
+						min-width: 100%;
 					}
 				}
 			}

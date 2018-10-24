@@ -819,6 +819,62 @@ form {
 			}
 		} */
 }
+@media screen and (max-width: 991px) {
+  .mvs-app .table.table-adaptive tr {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-top: 20px;
+  }
+  .mvs-app .table.table-adaptive tr:first-child td {
+    padding: 0 12px 24px !important;
+  }
+  .mvs-app .table.table-adaptive th,
+  .mvs-app .table.table-adaptive td {
+    display: block;
+  }
+  .mvs-app .table.table-adaptive .cert-item td {
+    padding-top: 20px;
+  }
+  .mvs-app .table.table-adaptive .cert-item td:first-child {
+    position: absolute;
+  }
+  .mvs-app .table.table-adaptive .cert-item td:first-child ~ td {
+    padding-left: 34px;
+  }
+  .mvs-app .table.table-adaptive .cert-item td:not(:first-child) {
+    position: relative;
+  }
+  .mvs-app .table.table-adaptive .cert-item td:not(:first-child):before {
+    color: #8a90a1;
+    font-size: 12px;
+    font-weight: normal;
+    position: absolute;
+    left: 34px;
+    top: -6px;
+  }
+  .mvs-app .table.table-adaptive .cert-item td:nth-child(2):before {
+    content: 'Организация и владелец';
+  }
+  .mvs-app .table.table-adaptive .cert-item td:nth-child(3):before {
+    content: 'Кем выдан';
+  }
+  .mvs-app .table.table-adaptive .cert-item td:nth-child(4):before {
+    content: 'Дата истечения сертификата';
+  }
+  .mvs-app .table.table-adaptive .cert-item td > .d-flex {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
 .mvs-app .table.table-lg td,
 .mvs-app .table.table-lg th {
   padding: 20px .75rem;
@@ -887,29 +943,68 @@ form {
 .mvs-app .table.cert-list .cert-item:last-child td {
   border-bottom: 0;
 }
-.mvs-app .table.cert-list .selected {
+.mvs-app .table.cert-list .cert-item.selected {
   -webkit-box-shadow: 0 10px 10px 0 rgba(207, 207, 207, 0.5);
           box-shadow: 0 10px 10px 0 rgba(207, 207, 207, 0.5);
   -webkit-transition: all .3s;
   transition: all .3s;
 }
-.mvs-app .table.cert-list .selected td {
+.mvs-app .table.cert-list .cert-item.selected td {
   border-top: solid 1px #4a90e2;
   border-bottom: solid 1px #4a90e2;
 }
-.mvs-app .table.cert-list .selected td:first-child {
+.mvs-app .table.cert-list .cert-item.selected td:first-child {
   border-left: solid 1px #4a90e2;
   -webkit-border-bottom-left-radius: 3px;
           border-bottom-left-radius: 3px;
   -webkit-border-top-left-radius: 3px;
           border-top-left-radius: 3px;
 }
-.mvs-app .table.cert-list .selected td:last-child {
+.mvs-app .table.cert-list .cert-item.selected td:last-child {
   border-right: solid 1px #4a90e2;
   -webkit-border-bottom-right-radius: 3px;
           border-bottom-right-radius: 3px;
   -webkit-border-top-right-radius: 3px;
           border-top-right-radius: 3px;
+}
+@media screen and (max-width: 991px) {
+  .mvs-app .table.cert-list.table-adaptive .cert-item {
+    border-top: solid 1px #c1cbd6;
+  }
+  .mvs-app .table.cert-list.table-adaptive .cert-item td {
+    border: 0;
+  }
+  .mvs-app .table.cert-list.table-adaptive .cert-item:nth-child(3).cert-item td {
+    border-top: solid 1px transparent;
+    border-top-color: transparent;
+    border-top: 0;
+  }
+  .mvs-app .table.cert-list.table-adaptive .cert-item:nth-child(3).cert-item.selected td {
+    border: 0;
+  }
+  .mvs-app .table.cert-list.table-adaptive .cert-item.selected {
+    border: solid 1px #4a90e2;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+  }
+  .mvs-app .table.cert-list.table-adaptive .cert-item.selected td {
+    -webkit-border-radius: 0;
+            border-radius: 0;
+    border: 0;
+  }
+  .mvs-app .table.cert-list.table-adaptive .cert-item.selected td:first-child {
+    -webkit-border-radius: 0;
+            border-radius: 0;
+    border: 0;
+  }
+  .mvs-app .table.cert-list.table-adaptive .cert-item.selected td:last-child {
+    -webkit-border-radius: 0;
+            border-radius: 0;
+    border: 0;
+  }
+  .mvs-app .table.cert-list.table-adaptive[class*="table-width-"] {
+    min-width: 100%;
+  }
 }
 .table.table-width-xl {
   min-width: 1140px;
