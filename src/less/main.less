@@ -591,10 +591,17 @@ form {
 	height: 80px;
 
 	.header-title {
+		color: @charcoal-grey;
 		font-size: 26px;
 
 		@media screen and (max-width: 1023px) {
 			font-size: 18px;
+		}
+
+		@media screen and (max-width: 767px) {
+			font-size: 16px;
+			line-height: 1;
+			margin-left: 0 !important;
 		}
 	}
 
@@ -612,14 +619,15 @@ form {
 }
 
 .toggle-nav {
-	cursor:pointer;
-	margin:0;
-	padding:4px 6px;
-	width:45px;
-	height:38px;
+	cursor: pointer;
+	margin: 0;
+	padding: 4px 6px;
+	width: 40px;
+	min-width: 40px;
+	height: 29px;
 	position: relative;
 	z-index: 11;
-	transition:all 0.3s;
+	transition: all 0.3s;
 
 	span {
 		display:block;
