@@ -805,6 +805,9 @@ form {
     padding: 40px 0 20px;
   }
 }
+.mvs-app .app-footer {
+  padding: 20px 0;
+}
 .mvs-app .menu-link {
   font-size: 14px;
 }
