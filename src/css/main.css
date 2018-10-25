@@ -842,10 +842,10 @@ form {
 }
 @media screen and (max-width: 767px) {
   .menu-visible .header .nav-menu {
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: normal;
+    -webkit-align-items: normal;
+        -ms-flex-align: normal;
+            align-items: normal;
     background: #fff;
     display: -webkit-box;
     display: -webkit-flex;
@@ -855,6 +855,7 @@ form {
     -webkit-justify-content: normal !important;
         -ms-flex-pack: normal !important;
             justify-content: normal !important;
+    padding: 0 15px;
     width: 100vw;
     height: -webkit-calc(100vh - 80px);
     height: calc(100vh - 80px);
