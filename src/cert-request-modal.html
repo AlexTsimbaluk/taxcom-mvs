@@ -24,11 +24,11 @@
 
 <body>
     <!-- Modal -->
-    <div class="modal" id="modal-cert-getting-error" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal" id="modal-create-cert" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Произошла ошибка!</h5>
+                    <h5 class="modal-title">Внимание</h5>
 
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <img src="img/close.svg" alt="Закрыть">
@@ -41,15 +41,7 @@
                     </div>
 
                     <div class="mt-4">
-                        При формировании запроса на сертификат произошла ошибка: Ошибка при подписи запроса: Не удалось определить размер подписи. Причина: указан неправильный алгоритм. (Код ошибки = 0x80090008). Попробуйте повторить процедуру нажав <a href="" class="menu-link font-size-18">Повторить</a>.
-                    </div>
-
-                    <div class="mt-2">
-                        Если ошибка повторится, обратитесь в <a href="" class="menu-link font-size-18">техническую поддержку</a>.
-                    </div>
-
-                    <div class="mt-2 font-size-12">
-                        Попробуйте воспользоваться другим браузером в случае ошибок работы «Мастер выпуска сертификатов». Поддерживаемые браузеры: Internet Explorer 7.0 и выше, Google Chrome 7.0.517.41 и выше, Mozilla Firefox 3.6 и выше, Opera 10.50 и выше.
+                        Обратите внимание на мигание окна внизу экрана.<br class="d-none d-sm-block"> Выберите вариант «показать сообщение» и продолжите<br class="d-none d-sm-block"> процедуру получения сертификата.
                     </div>
                 </div>
 
@@ -108,44 +100,24 @@
         <div class="content d-flex flex-column overflow-y justify-content-center">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div
-                        class="mvs-app col-xl-6 col-lg-8 col-md-10 mx-auto"
-                        data-toggle="modal"
-                        data-target="#modal-cert-getting-error"
-                    >
+                    <div class="mvs-app">
                         <div class="app-header col">
                             <img class="app-logo" src="img/logo-mvs.svg" alt="Taxcom-MVS">
 
                             <h1 class="app-title">
-                                Получение сертификата
+                                Модальное окно<br class="d-none d-md-block"> при создании запроса<br class="d-none d-md-block"> на сертификат
                             </h1>
-
-                            <h2 class="app-title-descr">
-                                Идет процесс получения сертификата, это может занять некоторое время. Пожалуйста, не закрывайте окно «Мастера выпуска сертификата» до окончания процесса.
-                            </h2>
                         </div>
 
-                        <div class="app-main d-flex flex-column align-items-center justify-content-between">
-                            <div class="w-100 mb-5 mt-3 progress js-get-cert-progress">
-                                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                        <div class="app-main col-lg-4 col-md-6 col-sm-8 col-12 px-0 m-auto">
+                            <div class="form-group d-flex justify-content-between button-group">
+                                <a href="cert-request.html" class="btn button-sm button-success button-outline">Назад</a>
 
-                            <div class="getting-cert-stages align-items-center d-flex flex-column">
-                                <p class="cert-stage stage-complete">
-                                    Формирование запроса<br class="d-block d-sm-none"> на сертификат
-                                </p>
-
-                                <p class="cert-stage stage-complete">
-                                    Отправка запроса
-                                </p>
-
-                                <p class="cert-stage stage-error">
-                                    Получение запроса
-                                </p>
-
-                                <p class="cert-stage stage-execute">
-                                    Обработка запроса
-                                </p>
+                                <button
+                                    class="btn button-success button-fill"
+                                    data-toggle="modal"
+                                    data-target="#modal-create-cert"
+                                >Посмотреть</button>
                             </div>
                         </div>
                     </div>
