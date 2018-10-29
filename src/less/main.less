@@ -6,7 +6,7 @@
 // дают размеры шрифта от 0.1em до 3em
 .generate-font-size(@levels-font-size-count, @q: 1) when (@q =< @levels-font-size-count) {
     .@{prop-font-name}-@{q} {
-        font-size: (0px + @q);
+        font-size: (0px + @q) !important;
     }
     .generate-font-size(@levels-font-size-count, (@q + 1));
 }
@@ -160,6 +160,13 @@ a {
         outline: none;
         text-decoration: none;
     }
+}
+
+.tooltip {
+	&[x-placement="bottom"] {
+		left: 0 !important;
+		top: 4px !important;
+	}
 }
 
 .default-color {
