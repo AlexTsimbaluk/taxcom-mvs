@@ -1165,12 +1165,14 @@ form {
 		position: relative;
 		&:before {
 			background-repeat: no-repeat;
+			background-size: 100% auto;
 			content: '';
 			width: 15px;
 			height: 15px;
 			position: absolute;
 			left: -30px;
-			transform: translateY(50%);
+			top: 50%;
+			transform: translateY(-50%);
 			@media screen and (max-width: 575px) {
 				left: -20px;
 			}
@@ -1178,6 +1180,8 @@ form {
 		&.stage-complete {
 			&:before {
 				background-image: url('../img/icon-check.svg');
+				width: 9px;
+				height: 9px;
 			}
 		}
 
@@ -1192,6 +1196,14 @@ form {
 				width: 15px;
 				height: 15px;
 				top: 5px;
+			}
+		}
+
+		&.stage-error {
+			&:before {
+				background-image: url('../img/icon-error.svg');
+				width: 11px;
+				height: 11px;
 			}
 		}
 	}

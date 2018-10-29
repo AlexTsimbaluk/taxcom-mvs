@@ -23,6 +23,47 @@
 </head>
 
 <body>
+    <!-- Modal -->
+    <div class="modal" id="modal-cert-getting-error" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Произошла ошибка!</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <img src="img/close.svg" alt="Закрыть">
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div>
+                        <img src="img/alert.svg" alt="Внимание">
+                    </div>
+
+                    <div class="mt-4">
+                        При формировании запроса на сертификат произошла ошибка: Ошибка при подписи запроса: Не удалось определить размер подписи. Причина: указан неправильный алгоритм. (Код ошибки = 0x80090008). Попробуйте повторить процедуру нажав <a href="" class="menu-link font-size-18">Повторить</a>.
+                    </div>
+
+                    <div class="mt-2">
+                        Если ошибка повторится, обратитесь в <a href="" class="menu-link font-size-18">техническую поддержку</a>.
+                    </div>
+
+                    <div class="mt-2 font-size-12">
+                        Попробуйте воспользоваться другим браузером в случае ошибок работы «Мастер выпуска сертификатов». Поддерживаемые браузеры: Internet Explorer 7.0 и выше, Google Chrome 7.0.517.41 и выше, Mozilla Firefox 3.6 и выше, Opera 10.50 и выше.
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button
+                        type="button"
+                        class="btn button-success button-fill button-md"
+                        data-dismiss="modal"
+                    >Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="main-wrapper d-flex flex-column">
         <div class="header">
             <div class="container h-100">
@@ -67,7 +108,10 @@
         <div class="content d-flex flex-column overflow-y justify-content-center">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="mvs-app col-xl-6 col-lg-8 col-md-10 mx-auto">
+                    <div
+                        class="mvs-app col-xl-6 col-lg-8 col-md-10 mx-auto"
+                        data-toggle="modal" data-target="#modal-cert-getting-error"
+                    >
                         <div class="app-header col">
                             <img class="app-logo" src="img/logo-mvs.svg" alt="Taxcom-MVS">
 
@@ -94,8 +138,12 @@
                                     Отправка запроса
                                 </p>
 
-                                <p class="cert-stage stage-execute">
+                                <p class="cert-stage stage-error">
                                     Получение запроса
+                                </p>
+
+                                <p class="cert-stage stage-execute">
+                                    Обработка запроса
                                 </p>
                             </div>
                         </div>

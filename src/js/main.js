@@ -44,7 +44,7 @@ $(window).on('load', function() {
     $('.progress-bar').animate({
         width: '100%'
     }, 5000, function() {
-        changeLocation('cert-info.html');
+        // changeLocation('cert-info.html');
     });
 
     $('.storage-item').on('click', function() {

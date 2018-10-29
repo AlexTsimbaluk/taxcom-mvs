@@ -1265,14 +1265,16 @@ form {
 }
 .getting-cert-stages .cert-stage:before {
   background-repeat: no-repeat;
+  background-size: 100% auto;
   content: '';
   width: 15px;
   height: 15px;
   position: absolute;
   left: -30px;
-  -webkit-transform: translateY(50%);
-      -ms-transform: translateY(50%);
-          transform: translateY(50%);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 @media screen and (max-width: 575px) {
   .getting-cert-stages .cert-stage:before {
@@ -1281,6 +1283,8 @@ form {
 }
 .getting-cert-stages .cert-stage.stage-complete:before {
   background-image: url('../img/icon-check.svg');
+  width: 9px;
+  height: 9px;
 }
 .getting-cert-stages .cert-stage.stage-execute:before {
   -webkit-animation: rotate 1s linear infinite;
@@ -1295,6 +1299,11 @@ form {
   width: 15px;
   height: 15px;
   top: 5px;
+}
+.getting-cert-stages .cert-stage.stage-error:before {
+  background-image: url('../img/icon-error.svg');
+  width: 11px;
+  height: 11px;
 }
 @media screen and (max-width: 767px) {
   [class*="col-"].px-0 {
