@@ -479,7 +479,8 @@ input[type="number"] {
   font-size: 14px;
 }
 @media screen and (max-width: 991px) {
-  .modal.modal-cert-detail .modal-content {
+  .modal.modal-cert-detail .modal-content,
+  .modal.modal-cert-select-print .modal-content {
     min-width: 100%;
     padding: 0;
   }
@@ -922,14 +923,14 @@ form {
 .mvs-app .menu-link {
   font-size: 14px;
 }
-.mvs-app .table {
+.table {
   text-align: left;
 }
 @media screen and (max-width: 991px) {
-  .mvs-app .table.table-adaptive {
+  .table.table-adaptive {
     margin-bottom: 0;
   }
-  .mvs-app .table.table-adaptive tr {
+  .table.table-adaptive tr {
     border-top: 1px solid #dee2e6;
     display: -webkit-box;
     display: -webkit-flex;
@@ -942,30 +943,30 @@ form {
             flex-direction: column;
     padding: 6px 0;
   }
-  .mvs-app .table.table-adaptive tr:first-child td {
+  .table.table-adaptive tr:first-child td {
     padding: 0 12px 24px !important;
   }
-  .mvs-app .table.table-adaptive th,
-  .mvs-app .table.table-adaptive td {
+  .table.table-adaptive th,
+  .table.table-adaptive td {
     display: block;
   }
-  .mvs-app .table.table-adaptive td {
+  .table.table-adaptive td {
     border: 0 !important;
     padding: 6px 0;
   }
-  .mvs-app .table.table-adaptive .cert-item td {
+  .table.table-adaptive .cert-item td {
     padding-top: 20px;
   }
-  .mvs-app .table.table-adaptive .cert-item td:first-child {
+  .table.table-adaptive .cert-item td:first-child {
     position: absolute;
   }
-  .mvs-app .table.table-adaptive .cert-item td:first-child ~ td {
+  .table.table-adaptive .cert-item td:first-child ~ td {
     padding-left: 34px;
   }
-  .mvs-app .table.table-adaptive .cert-item td:not(:first-child) {
+  .table.table-adaptive .cert-item td:not(:first-child) {
     position: relative;
   }
-  .mvs-app .table.table-adaptive .cert-item td:not(:first-child):before {
+  .table.table-adaptive .cert-item td:not(:first-child):before {
     color: #8a90a1;
     font-size: 12px;
     font-weight: normal;
@@ -974,121 +975,132 @@ form {
     top: -6px;
     top: 0;
   }
-  .mvs-app .table.table-adaptive .cert-item td:nth-child(2):before {
+  .table.table-adaptive .cert-item td:nth-child(2):before {
     content: 'Организация и владелец';
   }
-  .mvs-app .table.table-adaptive .cert-item td:nth-child(3):before {
+  .table.table-adaptive .cert-item td:nth-child(3):before {
     content: 'Кем выдан';
   }
-  .mvs-app .table.table-adaptive .cert-item td:nth-child(4):before {
+  .table.table-adaptive .cert-item td:nth-child(4):before {
     content: 'Дата истечения сертификата';
   }
-  .mvs-app .table.table-adaptive .cert-item td > .d-flex {
+  .table.table-adaptive .cert-item td > .d-flex {
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .mvs-app .table.table-adaptive[class*="table-width-"] {
+  .table.table-adaptive[class*="table-width-"] {
     min-width: 100%;
   }
 }
-.mvs-app .table.table-lg {
+@media screen and (max-width: 1199px) {
+  .modal .table.table-adaptive[class*="table-width-"] {
+    min-width: 100%;
+  }
+  .modal .table.table-adaptive tr:first-child {
+    border-top: 0;
+  }
+  .modal .table.table-adaptive tr:first-child td {
+    padding: 0 0 24px !important;
+  }
+}
+.table.table-lg {
   /* &.table-adaptive {
-				@media screen and (max-width: 991px) {
-					td {
-						padding: 12px 0;
-					}
+			@media screen and (max-width: 991px) {
+				td {
+					padding: 12px 0;
 				}
-			} */
+			}
+		} */
 }
 @media screen and (min-width: 992px) {
-  .mvs-app .table.table-lg td,
-  .mvs-app .table.table-lg th {
+  .table.table-lg td,
+  .table.table-lg th {
     padding: 20px .75rem;
   }
 }
-.mvs-app .table tr:first-child th {
+.table tr:first-child th {
   border-top: 0;
 }
-.mvs-app .table tr:first-child td {
+.table tr:first-child td {
   border-top: 0;
 }
-.mvs-app .table tr.border-top-0 td,
-.mvs-app .table tr.border-top-0 th {
+.table tr.border-top-0 td,
+.table tr.border-top-0 th {
   border-top: 0;
 }
-.mvs-app .table th {
+.table th {
   color: #8a90a1;
   font-size: 12px;
   font-weight: normal;
   text-transform: uppercase;
 }
-.mvs-app .table th:first-child {
+.table th:first-child {
   padding-left: 0;
 }
-.mvs-app .table td {
+.table td {
   font-size: 14px;
 }
-.mvs-app .table td:first-child {
+.table td:first-child {
   color: #656974;
   padding-left: 0;
 }
-.mvs-app .table td:last-child {
+.table td:last-child {
   color: #2b2e35;
 }
-.mvs-app .table .btn.button-md {
+.table .btn.button-md {
   padding: 9px 12px;
   width: 140px;
 }
-.mvs-app .table.cert-list th {
+.table.cert-list th {
   border-color: transparent;
   text-transform: none;
 }
-.mvs-app .table.cert-list td {
+.table.cert-list td {
   padding: 12px;
 }
-.mvs-app .table.cert-list td:first-child {
+.table.cert-list td:first-child {
   padding-right: 0;
 }
-.mvs-app .table.cert-list td:not(:nth-child(3)) {
+.table.cert-list td:not(:nth-child(3)) {
   color: #656974;
 }
-.mvs-app .table.cert-list tr:nth-child(3).cert-item td {
+.table.cert-list tr:nth-child(3).cert-item td {
   border-top: solid 1px transparent;
   border-top-color: transparent;
 }
-.mvs-app .table.cert-list tr:nth-child(3).cert-item.selected td {
+.table.cert-list tr:nth-child(3).cert-item.selected td {
   border-top: solid 1px #4a90e2;
 }
-.mvs-app .table.cert-list .cert-item:not(.selected):hover {
+.table.cert-list .cert-item:not(.selected):hover {
   -webkit-box-shadow: 0 0 8px 0 rgba(207, 207, 207, 0.5);
           box-shadow: 0 0 8px 0 rgba(207, 207, 207, 0.5);
 }
-.mvs-app .table.cert-list .cert-item td {
+.table.cert-list .cert-item td {
   border-top: solid 1px #c1cbd6;
 }
-.mvs-app .table.cert-list .cert-item:last-child td {
+.table.cert-list .cert-item:last-child td {
   border-bottom: solid 1px transparent;
 }
-.mvs-app .table.cert-list .cert-item.selected {
+.table.cert-list .cert-item.selected {
   -webkit-box-shadow: 0 10px 10px 0 rgba(207, 207, 207, 0.5);
           box-shadow: 0 10px 10px 0 rgba(207, 207, 207, 0.5);
   -webkit-transition: all .3s;
   transition: all .3s;
 }
-.mvs-app .table.cert-list .cert-item.selected td {
+.table.cert-list .cert-item.selected td {
   border-top: solid 1px #4a90e2;
   border-bottom: solid 1px #4a90e2;
 }
-.mvs-app .table.cert-list .cert-item.selected td:first-child {
+.table.cert-list .cert-item.selected td:first-child {
   border-left: solid 1px #4a90e2;
   -webkit-border-bottom-left-radius: 3px;
           border-bottom-left-radius: 3px;
   -webkit-border-top-left-radius: 3px;
           border-top-left-radius: 3px;
 }
-.mvs-app .table.cert-list .cert-item.selected td:last-child {
+.table.cert-list .cert-item.selected td:last-child {
   border-right: solid 1px #4a90e2;
   -webkit-border-bottom-right-radius: 3px;
           border-bottom-right-radius: 3px;
@@ -1096,37 +1108,37 @@ form {
           border-top-right-radius: 3px;
 }
 @media screen and (max-width: 991px) {
-  .mvs-app .table.cert-list.table-adaptive .cert-item {
+  .table.cert-list.table-adaptive .cert-item {
     border: solid 1px transparent;
     border-top: solid 1px #c1cbd6;
     padding-top: 20px;
   }
-  .mvs-app .table.cert-list.table-adaptive .cert-item td {
+  .table.cert-list.table-adaptive .cert-item td {
     border: 0;
   }
-  .mvs-app .table.cert-list.table-adaptive .cert-item:nth-child(3).cert-item td {
+  .table.cert-list.table-adaptive .cert-item:nth-child(3).cert-item td {
     border-top: solid 1px transparent;
     border-top-color: transparent;
   }
-  .mvs-app .table.cert-list.table-adaptive .cert-item:nth-child(3).cert-item.selected td {
+  .table.cert-list.table-adaptive .cert-item:nth-child(3).cert-item.selected td {
     border: 0;
   }
-  .mvs-app .table.cert-list.table-adaptive .cert-item.selected {
+  .table.cert-list.table-adaptive .cert-item.selected {
     border: solid 1px #4a90e2;
     -webkit-border-radius: 3px;
             border-radius: 3px;
   }
-  .mvs-app .table.cert-list.table-adaptive .cert-item.selected td {
+  .table.cert-list.table-adaptive .cert-item.selected td {
     -webkit-border-radius: 0;
             border-radius: 0;
     border: 0;
   }
-  .mvs-app .table.cert-list.table-adaptive .cert-item.selected td:first-child {
+  .table.cert-list.table-adaptive .cert-item.selected td:first-child {
     -webkit-border-radius: 0;
             border-radius: 0;
     border: 0;
   }
-  .mvs-app .table.cert-list.table-adaptive .cert-item.selected td:last-child {
+  .table.cert-list.table-adaptive .cert-item.selected td:last-child {
     -webkit-border-radius: 0;
             border-radius: 0;
     border: 0;

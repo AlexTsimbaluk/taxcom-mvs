@@ -283,7 +283,8 @@ input[type="number"] {
 		}
 	}
 
-	&.modal-cert-detail {
+	&.modal-cert-detail,
+	&.modal-cert-select-print {
 		@media screen and (max-width: 991px) {
 			.modal-content {
 				min-width: 100%;
@@ -759,275 +760,294 @@ form {
 	.menu-link {
 		font-size: 14px;
 	}
+}
 
-	.table {
-		text-align: left;
+.table {
+	text-align: left;
 
-		&.table-adaptive {
-			@media screen and (max-width: 991px) {
-				margin-bottom: 0;
+	&.table-adaptive {
+		@media screen and (max-width: 991px) {
+			margin-bottom: 0;
 
-				tr {
-					border-top: 1px solid #dee2e6;
-					display: flex;
-					flex-direction: column;
-					padding: 6px 0;
+			tr {
+				border-top: 1px solid #dee2e6;
+				display: flex;
+				flex-direction: column;
+				padding: 6px 0;
 
-					&:first-child {
-						td {
-							padding: 0 12px 24px !important;
-						}
-					}
-				}
-
-				th,
-				td {
-					display: block;
-				}
-
-				td {
-					border: 0 !important;
-					padding: 6px 0;
-				}
-
-				.cert-item {
+				&:first-child {
 					td {
-						padding-top: 20px;
-
-						&:first-child {
-							position: absolute;
-							~ td {
-								padding-left: 34px;
-							}
-						}
-
-						&:not(:first-child) {
-							position: relative;
-							&:before {
-								color: #8a90a1;
-								font-size: 12px;
-								font-weight: normal;
-								position: absolute;
-								left: 34px;
-								top: -6px;
-								top: 0;
-							}
-						}
-
-						&:nth-child(2) {
-							&:before {
-								content: 'Организация и владелец';
-							}
-						}
-
-						&:nth-child(3) {
-							&:before {
-								content: 'Кем выдан';
-							}
-						}
-
-						&:nth-child(4) {
-							&:before {
-								content: 'Дата истечения сертификата';
-							}
-						}
-					}
-
-					td {
-						> .d-flex {
-							justify-content: space-between;
-						}
+						padding: 0 12px 24px !important;
 					}
 				}
-
-				&[class*="table-width-"] {
-					min-width: 100%;
-				}
-			}
-		}
-
-		&.table-lg {
-			@media screen and (min-width: 992px) {
-				td,
-				th {
-					padding: 20px .75rem;
-				}
 			}
 
-			/* &.table-adaptive {
-				@media screen and (max-width: 991px) {
-					td {
-						padding: 12px 0;
-					}
-				}
-			} */
-		}
-
-		tr {
-			&:first-child {
-				th {
-					border-top: 0;
-				}
-				td {
-					border-top: 0;
-				}
-			}
-		}
-
-		tr {
-			&.border-top-0 {
-				td,
-				th {
-					border-top: 0;
-				}
-			}
-		}
-
-		th {
-			color: #8a90a1;
-			font-size: 12px;
-			font-weight: normal;
-			text-transform: uppercase;
-			&:first-child {
-				padding-left: 0;
-			}
-		}
-
-		td {
-			font-size: 14px;
-			&:first-child {
-				color: @slate-grey;
-				padding-left: 0;
-			}
-			&:last-child {
-				color: @charcoal-grey;
-			}
-		}
-
-		.btn {
-			&.button-md {
-				padding: 9px 12px;
-				width: 140px;
-			}
-		}
-
-		&.cert-list {
-			th {
-				border-color: transparent;
-				text-transform: none;
+			th,
+			td {
+				display: block;
 			}
 
 			td {
-				padding: 12px;
-
-				&:first-child {
-					padding-right: 0;
-				}
-
-				&:not(:nth-child(3)) {
-					color: @slate-grey;
-				}
-			}
-
-			tr {
-				&:nth-child(3) {
-					&.cert-item {
-						td {
-							border-top: solid 1px transparent;
-							border-top-color: transparent;
-							// border-top: 0;
-						}
-
-						&.selected {
-							td {
-								border-top: solid 1px #4a90e2;
-							}
-						}
-					}
-				}
+				border: 0 !important;
+				padding: 6px 0;
 			}
 
 			.cert-item {
-				&:not(.selected) {
-					&:hover {
-						box-shadow: 0 0 8px 0 rgba(207, 207, 207, 0.5);
+				td {
+					padding-top: 20px;
+
+					&:first-child {
+						position: absolute;
+						~ td {
+							padding-left: 34px;
+						}
+					}
+
+					&:not(:first-child) {
+						position: relative;
+						&:before {
+							color: #8a90a1;
+							font-size: 12px;
+							font-weight: normal;
+							position: absolute;
+							left: 34px;
+							top: -6px;
+							top: 0;
+						}
+					}
+
+					&:nth-child(2) {
+						&:before {
+							content: 'Организация и владелец';
+						}
+					}
+
+					&:nth-child(3) {
+						&:before {
+							content: 'Кем выдан';
+						}
+					}
+
+					&:nth-child(4) {
+						&:before {
+							content: 'Дата истечения сертификата';
+						}
 					}
 				}
 
 				td {
-					// border: solid 1px transparent;
-					border-top: solid 1px #c1cbd6;
-				}
-
-				&:last-child {
-					td {
-						// border-bottom: 0;
-						border-bottom: solid 1px transparent;
-					}
-				}
-
-				&.selected {
-					box-shadow: 0 10px 10px 0 rgba(207, 207, 207, 0.5);
-					transition: all .3s;
-					td {
-						border-top: solid 1px #4a90e2;
-						border-bottom: solid 1px #4a90e2;
-						&:first-child {
-							border-left: solid 1px #4a90e2;
-							border-bottom-left-radius: 3px;
-							border-top-left-radius: 3px;
-						}
-						&:last-child {
-							border-right: solid 1px #4a90e2;
-							border-bottom-right-radius: 3px;
-							border-top-right-radius: 3px;
-						}
+					> .d-flex {
+						justify-content: space-between;
 					}
 				}
 			}
 
+			&[class*="table-width-"] {
+				min-width: 100%;
+			}
+		}
+	}
 
-			&.table-adaptive {
-				@media screen and (max-width: 991px) {
-					.cert-item {
-						border: solid 1px transparent;
-						border-top: solid 1px #c1cbd6;
-						padding-top: 20px;
+	.modal & {
+		&.table-adaptive {
+			@media screen and (max-width: 1199px) {
+				&[class*="table-width-"] {
+					min-width: 100%;
+				}
 
+				tr {
+					&:first-child {
+						border-top: 0;
 						td {
-							border: 0;
+							padding: 0 0 24px !important;
 						}
+					}
+				}
+			}
+		}
+	}
 
-						&:nth-child(3) {
-							&.cert-item {
+	&.table-lg {
+		@media screen and (min-width: 992px) {
+			td,
+			th {
+				padding: 20px .75rem;
+			}
+		}
+
+		/* &.table-adaptive {
+			@media screen and (max-width: 991px) {
+				td {
+					padding: 12px 0;
+				}
+			}
+		} */
+	}
+
+	tr {
+		&:first-child {
+			th {
+				border-top: 0;
+			}
+			td {
+				border-top: 0;
+			}
+		}
+	}
+
+	tr {
+		&.border-top-0 {
+			td,
+			th {
+				border-top: 0;
+			}
+		}
+	}
+
+	th {
+		color: #8a90a1;
+		font-size: 12px;
+		font-weight: normal;
+		text-transform: uppercase;
+		&:first-child {
+			padding-left: 0;
+		}
+	}
+
+	td {
+		font-size: 14px;
+		&:first-child {
+			color: @slate-grey;
+			padding-left: 0;
+		}
+		&:last-child {
+			color: @charcoal-grey;
+		}
+	}
+
+	.btn {
+		&.button-md {
+			padding: 9px 12px;
+			width: 140px;
+		}
+	}
+
+	&.cert-list {
+		th {
+			border-color: transparent;
+			text-transform: none;
+		}
+
+		td {
+			padding: 12px;
+
+			&:first-child {
+				padding-right: 0;
+			}
+
+			&:not(:nth-child(3)) {
+				color: @slate-grey;
+			}
+		}
+
+		tr {
+			&:nth-child(3) {
+				&.cert-item {
+					td {
+						border-top: solid 1px transparent;
+						border-top-color: transparent;
+						// border-top: 0;
+					}
+
+					&.selected {
+						td {
+							border-top: solid 1px #4a90e2;
+						}
+					}
+				}
+			}
+		}
+
+		.cert-item {
+			&:not(.selected) {
+				&:hover {
+					box-shadow: 0 0 8px 0 rgba(207, 207, 207, 0.5);
+				}
+			}
+
+			td {
+				// border: solid 1px transparent;
+				border-top: solid 1px #c1cbd6;
+			}
+
+			&:last-child {
+				td {
+					// border-bottom: 0;
+					border-bottom: solid 1px transparent;
+				}
+			}
+
+			&.selected {
+				box-shadow: 0 10px 10px 0 rgba(207, 207, 207, 0.5);
+				transition: all .3s;
+				td {
+					border-top: solid 1px #4a90e2;
+					border-bottom: solid 1px #4a90e2;
+					&:first-child {
+						border-left: solid 1px #4a90e2;
+						border-bottom-left-radius: 3px;
+						border-top-left-radius: 3px;
+					}
+					&:last-child {
+						border-right: solid 1px #4a90e2;
+						border-bottom-right-radius: 3px;
+						border-top-right-radius: 3px;
+					}
+				}
+			}
+		}
+
+
+		&.table-adaptive {
+			@media screen and (max-width: 991px) {
+				.cert-item {
+					border: solid 1px transparent;
+					border-top: solid 1px #c1cbd6;
+					padding-top: 20px;
+
+					td {
+						border: 0;
+					}
+
+					&:nth-child(3) {
+						&.cert-item {
+							td {
+								border-top: solid 1px transparent;
+								border-top-color: transparent;
+								// border-top: 0;
+							}
+
+							&.selected {
 								td {
-									border-top: solid 1px transparent;
-									border-top-color: transparent;
-									// border-top: 0;
-								}
-
-								&.selected {
-									td {
-										border: 0;
-									}
+									border: 0;
 								}
 							}
 						}
+					}
 
-						&.selected {
-							border: solid 1px #4a90e2;
-							border-radius: 3px;
-							td {
+					&.selected {
+						border: solid 1px #4a90e2;
+						border-radius: 3px;
+						td {
+							border-radius: 0;
+							border: 0;
+							&:first-child {
 								border-radius: 0;
 								border: 0;
-								&:first-child {
-									border-radius: 0;
-									border: 0;
-								}
-								&:last-child {
-									border-radius: 0;
-									border: 0;
-								}
+							}
+							&:last-child {
+								border-radius: 0;
+								border: 0;
 							}
 						}
 					}
