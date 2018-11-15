@@ -480,6 +480,7 @@ input[type="number"] {
 }
 @media screen and (max-width: 991px) {
   .modal.modal-cert-detail .modal-content,
+  .modal.modal-system-info .modal-content,
   .modal.modal-cert-select-print .modal-content {
     min-width: 100%;
     padding: 0;
