@@ -23,6 +23,44 @@
 </head>
 
 <body>
+    <!-- Modal -->
+    <div class="modal" id="modal-skip-phone-number" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Внимание</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <img src="img/close.svg" alt="Закрыть">
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div>
+                        <img src="img/alert.svg" alt="Внимание">
+                    </div>
+
+                    <div class="mt-4">
+                        При пропуске этого шага вы отказываетесь от уведомлений о статусе сертификата. Специалист удостоверяющего центра не сможет вам позвонить в случае блокировки сертификата
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="form-group d-flex justify-content-center col-md-8 p-0 mt-5 mx-auto button-group">
+                        <button class="btn button-md button-success button-outline mr-2" data-dismiss="modal">Закрыть</button>
+
+                        <a
+                            href="storage-selection.html"
+                            class="btn button-success button-fill button-md ml-2"
+                        >
+                            Пропустить
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="main-wrapper d-flex flex-column">
         <div class="header">
             <div class="container h-100">
@@ -104,7 +142,8 @@
                                 </div> -->
 
                                 <div class="form-group text-center mt-4">
-                                    <a href="storage-selection.html" class="">Пропустить</a>
+                                    <!-- <a href="storage-selection.html" class="">Пропустить</a> -->
+                                    <a href="" data-toggle="modal" data-target="#modal-skip-phone-number" class="">Пропустить</a>
                                 </div>
 
                                 <div class="form-group d-flex justify-content-between button-group">
