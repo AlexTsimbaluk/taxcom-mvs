@@ -225,6 +225,32 @@ var phoneMaskInput = new Cleave('[data-mask=phone]', {
     phoneRegionCode: 'RU'
 });
 
-phoneMaskInput.setRawValue('+7');
+var startVal = '+7';
+var startValArray = startVal.split('');
 
 $('[data-mask=phone]').trigger('focus');
+
+phoneMaskInput.setRawValue(startVal);
+
+$('[data-mask=phone]').on('keyup', function (e) {
+    var formattedVal = phoneMaskInput.getFormattedValue();
+    var rawVal = phoneMaskInput.getRawValue();
+
+    if (rawVal.indexOf(startValArray[0]) != 0) {
+        // console.log('deleted +');
+        // console.log(rawVal);
+
+        if (rawVal.indexOf(startValArray[1]) == 0) {
+            // console.log('only + deleted');
+            phoneMaskInput.setRawValue(startValArray[0] + rawVal.substr(0));
+        }
+    } else if (rawVal.indexOf(startValArray[1]) != 1) {
+        // console.log('deleted 7');
+        // console.log(rawVal);
+
+        if (rawVal.indexOf(startValArray[0]) == 0) {
+            // console.log('only 7 deleted');
+            phoneMaskInput.setRawValue(startValArray[0] + startValArray[1] + rawVal.substr(1));
+        }
+    }
+});
