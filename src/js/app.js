@@ -76,8 +76,8 @@ $(window).on('load', function () {
 
         if (type == 'confirmation-code') {
             // pattern = /\b\d{5}\b/;
-            pattern = /^\d{5,}$/;
-            errorMessage = 'Введите пятизначный цифровой код';
+            pattern = /^\d{4}$/;
+            errorMessage = 'Введите четырехзначный код';
         } else if (type == 'text') {
             pattern = /^[A-Za-zА-Яа-яЁё][A-Za-zА-Яа-яЁё0-9\._-]{3,}$/;
             errorMessage = 'От 4 до 20 символов';
@@ -146,12 +146,24 @@ $(window).on('load', function () {
         return false;
     });
 
-    $('[data-required]').on('keyup', function () {
+    // цифровой код подтверждения
+    // input[type=number] позволяет ввести символы -, +, e, поэтому запретим их
+    $('[data-required][data-maxlength][data-type="confirmation-code"]').on('keypress', function (e) {
+        if (e.keyCode < 48 || e.keyCode > 57) {
+            return false;
+        }
+    });
+
+    $('[data-required]').on('keyup', function (e) {
         var $input = $(this);
         var $formGroup = $input.closest('.form-group');
         var $submitButton = $('[type=submit][data-disabled-button]');
 
         var valid;
+
+        if ($input.val().length > +$input.attr('data-maxlength')) {
+            $input.val($input.val().substr(0, +$input.attr('data-maxlength')));
+        }
 
         if ($input.val().length > 1) {
             valid = validateField($input);
