@@ -41,11 +41,21 @@ $(window).on('load', function() {
     })();
 
     // progress-bar
-    $('.progress-bar').animate({
+    /*$('.progress-bar').animate({
         width: '100%'
     }, 5000, function() {
         changeLocation('cert-info.html');
-    });
+    });*/
+
+    if($('.js-get-cert-progress').length) {
+        setTimeout(() => {
+            $('.js-get-cert-progress').removeClass('state-waiting').addClass('state-success');
+            setTimeout(() => {
+                changeLocation('cert-info.html');
+            }, 500);
+        }, 4000);
+    }
+
 
     $('.storage-item').on('click', function() {
         var $storage = $(this);
