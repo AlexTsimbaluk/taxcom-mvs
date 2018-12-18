@@ -15,21 +15,9 @@ $('[data-mask=phone]').on('keyup', function(e) {
     let formattedVal = phoneMaskInput.getFormattedValue();
     let rawVal = phoneMaskInput.getRawValue();
 
-    if(rawVal.indexOf(startValArray[0]) != 0) {
-        // console.log('deleted +');
-        // console.log(rawVal);
-
-        if(rawVal.indexOf(startValArray[1]) == 0) {
-            // console.log('only + deleted');
-            phoneMaskInput.setRawValue(startValArray[0] + rawVal.substr(0));
-        }
-    } else if(rawVal.indexOf(startValArray[1]) != 1) {
-        // console.log('deleted 7');
-        // console.log(rawVal);
-
-        if(rawVal.indexOf(startValArray[0]) == 0) {
-            // console.log('only 7 deleted');
-            phoneMaskInput.setRawValue(startValArray[0] + startValArray[1] + rawVal.substr(1));
-        }
+    if(rawVal.indexOf(startValArray[0]) != 0 && rawVal.indexOf(startValArray[1]) == 0) {
+        phoneMaskInput.setRawValue(startValArray[0] + rawVal.substr(0));
+    } else if(rawVal.indexOf(startValArray[1]) != 1 && rawVal.indexOf(startValArray[0]) == 0) {
+        phoneMaskInput.setRawValue(startValArray[0] + startValArray[1] + rawVal.substr(1));
     }
 });
