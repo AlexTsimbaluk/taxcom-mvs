@@ -479,7 +479,7 @@ input[type="number"] {
   border-top: 0;
 }
 .modal.show .table td {
-  vertical-align: middle;
+  vertical-align: top;
 }
 .modal.show .table td:first-child {
   color: #8a90a1;
