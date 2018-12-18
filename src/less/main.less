@@ -1266,3 +1266,63 @@ form {
 		}
 	}
 }
+
+
+.sorting {
+	.sort-arrow {
+		cursor: pointer;
+		height: 16px;
+		width: 16px;
+		display: inline-block;
+		position: relative;
+		transform: translateY(50%);
+		&:after,
+		&:before {
+			content: '';
+			border: 1px solid #cdcccd;
+			margin-left: 5px;
+			width: 25%;
+			height: 25%;
+			position: absolute;
+			transform: rotate(135deg);
+		}
+
+		&:before {
+			// border-right: 1px solid;
+			border-bottom: 0;
+			border-left: 0;
+			margin-top: 4px;
+			// top: 0%;
+		}
+
+		&:after {
+			border-top: 0;
+			border-right: 0;
+			margin-bottom: 4px;
+			// top: 50%;
+		}
+	}
+
+	&.sorted {
+		.sort-arrow {
+			&:before,
+			&:after {
+				border-color: #b5d4e9;
+			}
+		}
+		&.sort-down {
+			.sort-arrow {
+				&:after {
+					border-color: @link-color;
+				}
+			}
+		}
+		&.sort-up {
+			.sort-arrow {
+				&:before {
+					border-color: @link-color;
+				}
+			}
+		}
+	}
+}

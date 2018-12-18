@@ -1349,3 +1349,45 @@ form {
     height: 130px;
   }
 }
+.sorting .sort-arrow {
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  position: relative;
+  -webkit-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
+}
+.sorting .sort-arrow:after,
+.sorting .sort-arrow:before {
+  content: '';
+  border: 1px solid #cdcccd;
+  margin-left: 5px;
+  width: 25%;
+  height: 25%;
+  position: absolute;
+  -webkit-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+.sorting .sort-arrow:before {
+  border-bottom: 0;
+  border-left: 0;
+  margin-top: 4px;
+}
+.sorting .sort-arrow:after {
+  border-top: 0;
+  border-right: 0;
+  margin-bottom: 4px;
+}
+.sorting.sorted .sort-arrow:before,
+.sorting.sorted .sort-arrow:after {
+  border-color: #b5d4e9;
+}
+.sorting.sorted.sort-down .sort-arrow:after {
+  border-color: #0069b3;
+}
+.sorting.sorted.sort-up .sort-arrow:before {
+  border-color: #0069b3;
+}
