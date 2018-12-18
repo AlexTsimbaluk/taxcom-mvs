@@ -67,7 +67,7 @@
         <div class="content d-flex flex-column overflow-y justify-content-center">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="mvs-app col-xl-6 col-lg-8 col-md-10 mx-auto px-0">
+                    <div class="mvs-app">
                         <div class="app-header col">
                             <img class="app-logo" src="img/logo-mvs.svg" alt="Taxcom-MVS">
 
@@ -76,16 +76,12 @@
                             </h1>
                         </div>
 
-                        <div class="app-main d-flex flex-column align-items-center justify-content-between">
+                        <div class="app-main col-xl-6 col-lg-8 col-md-10 mx-auto px-0 d-flex flex-column align-items-center justify-content-between">
                             <div class="link-block-wrapper mb-4">
                                 <div class="link-block text-center">
-                                    <a class="d-block" href="">
+                                    <div class="">
                                         <img src="img/icon-backup.svg" alt="Taxcom-MVS">
-
-                                        <div class="link-title">
-                                            Резервное копирование
-                                        </div>
-                                    </a>
+                                    </div>
                                 </div>
                             </div>
 
@@ -93,8 +89,13 @@
                                 Резервная копия позволит сохранить ваш сертификат<br class="d-none d-sm-block"> в случае переустановки системы или повреждения основного ключа.
                             </p>
 
-                            <div class="mt-4">
-                                <a href="final-ok.html" class="btn button-success button-fill">Продолжить</a>
+                        </div>
+
+                        <div class="app-footer col-lg-4 col-md-6 col-sm-8 px-0 mx-auto">
+                            <div class="form-group d-flex justify-content-between button-group">
+                                <a href="final-ok.html" class="btn button-sm button-success button-outline">Пропустить</a>
+
+                                <a class="btn button-success button-fill" href="storage-selection.html">Создать</a>
                             </div>
                         </div>
                     </div>
