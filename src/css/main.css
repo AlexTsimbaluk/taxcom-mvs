@@ -418,6 +418,20 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+.modal {
+  /*
+	// анимация роявления
+	.modal-dialog {
+		transition: top 1s;
+	}
+
+	&:not(.show) {
+		.modal-dialog {
+			top: -50%;
+		}
+	}
+	*/
+}
 .modal.show .modal-dialog {
   color: #2b2e35;
   max-width: 660px;
