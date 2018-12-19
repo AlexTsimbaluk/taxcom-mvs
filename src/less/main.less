@@ -1393,3 +1393,55 @@ form {
 		}
 	}
 }
+
+.pagination {
+	margin-bottom: 50px;
+	// max-width: 360px;
+	.btn {
+		border: 1px solid #edf2f8;
+		border-radius: 2px;
+		color: #000;
+		line-height: normal;
+		padding: 4px 11px 7px;
+		width: auto;
+		&.page-prev,
+		&.page-next {
+			padding: 4px 23px 7px;
+		}
+
+		.arrow {
+			border: 1px solid #369927;
+			display: inline-block;
+			width: 9px;
+			height: 9px;
+			transform: rotate(135deg);
+		}
+
+		&.page-prev {
+			.arrow {
+				border-width: 0 2px 2px 0;
+			}
+		}
+		&.page-next {
+			.arrow {
+				border-width: 2px 0 0 2px;
+			}
+		}
+
+		&:hover {
+			color: #797979;
+		}
+	}
+
+	.page-number {
+		+ .page-number {
+			margin-left: -1px;
+		}
+
+		&.active {
+			background: #369927;
+			color: #fff;
+			cursor: default;
+		}
+	}
+}

@@ -1493,3 +1493,45 @@ form {
 .sorting.sorted.sort-up .sort-arrow:before {
   border-color: #0069b3;
 }
+.pagination {
+  margin-bottom: 50px;
+}
+.pagination .btn {
+  border: 1px solid #edf2f8;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  color: #000;
+  line-height: normal;
+  padding: 4px 11px 7px;
+  width: auto;
+}
+.pagination .btn.page-prev,
+.pagination .btn.page-next {
+  padding: 4px 23px 7px;
+}
+.pagination .btn .arrow {
+  border: 1px solid #369927;
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  -webkit-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+.pagination .btn.page-prev .arrow {
+  border-width: 0 2px 2px 0;
+}
+.pagination .btn.page-next .arrow {
+  border-width: 2px 0 0 2px;
+}
+.pagination .btn:hover {
+  color: #797979;
+}
+.pagination .page-number + .page-number {
+  margin-left: -1px;
+}
+.pagination .page-number.active {
+  background: #369927;
+  color: #fff;
+  cursor: default;
+}
