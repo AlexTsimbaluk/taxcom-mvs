@@ -101,7 +101,8 @@ $(window).on('load', function() {
             pattern = /^[a-z0-9_-]+([\.a-z]+)?@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/i;
             errorMessage = 'Некорректный email';
         } else if(type == 'password') {
-            pattern = /^[a-z][a-z0-9_-\.]{4,}$/i;
+            // pattern = /^[a-z][a-z0-9_-\.]{4,}$/i;
+            pattern = /^[\d\w\._-]{5,}$/i;
             errorMessage = 'От 5 символов';
         } else if(type == 'tel') {
             value = phoneMaskInput.getRawValue();
@@ -169,12 +170,31 @@ $(window).on('load', function() {
 
     // цифровой код подтверждения
     // input[type=number] позволяет ввести символы -, +, e, поэтому запретим их
-    $('[data-required][data-maxlength][data-type="confirmation-code"]').on('keypress', function(e) {
-        if(e.keyCode < 48 || e.keyCode > 57) {
+    // разрешим цифры, стрелки курсора, удаление и Enter
+    $('[data-required][data-maxlength][data-type="confirmation-code"]').on('keydown', function(e) {
+        var code = e.keyCode;
+
+        if((code < 48 || (code > 57 && code < 96) || code > 105) &&
+            (code != 8 && code != 46 && code != 37 && code != 39 && code != 13)
+        ) {
             return false;
         }
     });
 
+    // event.type должен быть keypress
+    function getChar(event) {
+        if (event.which == null) { // IE
+            if (event.keyCode < 32) return null; // спец. символ
+            return event.keyCode;
+        }
+
+        if (event.which != 0 && event.charCode != 0) { // все кроме IE
+            if (event.which < 32) return null; // спец. символ
+            return event.which;
+        }
+
+        return null; // спец. символ
+    }
 
     $('[data-required]').on('keyup', function(e) {
         var $input = $(this);
@@ -214,17 +234,6 @@ $(window).on('load', function() {
         var $submit = $(this);
 
         changeLocation($submit.attr('data-success-location'));
-
-        /*var successLocation = $submit.attr('data-success-location');
-        var path = window.location.pathname;
-
-        path = path.split('/');
-        path[path.length - 1] = successLocation;
-        path = path.join('/');
-
-        if(validateForm()) {
-            window.location.pathname = path;
-        }*/
     });
 
     // переход на другую страницу
