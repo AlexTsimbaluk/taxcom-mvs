@@ -67,38 +67,39 @@
         <div class="content d-flex flex-column overflow-y justify-content-center">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="mvs-app col-md-6 mx-auto p-0">
-                        <div class="app-main d-flex flex-column text-left links-list col-12 px-0 pt-0">
-                            <a href="main.html">Выберите способ получения сертификата</a>
-                            <a href="cert-select-print.html">Выбор сертификата для печати</a>
-                            <a href="card-access.html">Введите параметры доступа</a>
-                            <a href="data-checking.html">Проверка данных</a>
-                            <a href="data-warning.html">Неверные данные</a>
-                            <a href="user-passport-data.html">Паспортные данные</a>
-                            <a href="notifications-phone.html">Настройка уведомлений по номеру телефона</a>
-                            <a href="phone-code.html">Ввод кода из смс</a>
-                            <!-- <a href="notifications-email.html">Настройка уведомлений по email</a> -->
-                            <!-- <a href="email-code.html">Ввод кода из письма</a> -->
-                            <a href="storage-selection.html">Выбор хранилища</a>
-                            <a href="storage-selection-one.html">Выбор хранилища - один носитель</a>
-                            <a href="password-setup.html">Установка пароля</a>
-                            <a href="cert-request.html">Создание запроса на сертификат</a>
-                            <a href="cert-request-modal.html">Модальное окно при создании запроса на сертификат</a>
-                            <a href="cert-getting.html">Получение сертификата</a>
-                            <a href="cert-getting-error-modal.html">Модальное окно с ошибкой при получении сертификата</a>
-                            <a href="cert-info.html">Информация о сертификате</a>
-                            <a href="cert-statement.html">Заявление на получение сертификата</a>
-                            <!-- <a href="cert-new.html">Получение нового сертификата</a> -->
-                            <a href="cert-new.html">Продолжение сессии</a>
-                            <a href="cert-select.html">Выбор сертификата для перевыпуска</a>
-                            <a href="key-backup.html">Создание резервной копии ключа</a>
-                            <a href="key-backup-name.html">Имя резервной копии</a>
-                            <a href="final-ok.html">Готово</a>
-                            <a href="system-info.html">Информация о системе</a>
-                            <a href="no-dependencies.html">Рабочее место не настроено</a>
+                    <div class="mvs-app">
+                        <div class="app-header col">
+                            <img class="app-logo" src="img/logo-mvs.svg" alt="Taxcom-MVS">
+
+                            <h1 class="app-title">
+                                Придумайте имя<br class="d-none d-md-block"> резервной копии
+                            </h1>
                         </div>
 
-                        <div class="app-footer col-md-4 p-0 mx-auto"></div>
+                        <div class="app-main">
+                            <p class="app-content col-lg-6 col-md-8 mx-auto px-0">
+                                Введите понятное имя для контейнера, в котором будет храниться резервная копия сертификата
+                            </p>
+
+                            <form action="" class="col-lg-4 col-md-6 col-sm-8 col-12 mx-auto px-0" role="form">
+                                <div class="form-group">
+                                    <label for="name">Имя</label>
+
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="name"
+                                        autofocus
+                                    >
+                                </div>
+
+                                <div class="form-group d-flex justify-content-between button-group my-5">
+                                    <a href="key-backup.html" class="btn button-sm button-success button-outline">Назад</a>
+
+                                    <a class="btn button-success button-fill" href="storage-selection.html">Продолжить</a>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
