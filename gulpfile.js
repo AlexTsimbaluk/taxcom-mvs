@@ -1,3 +1,4 @@
+'use strict';
 
 var gulp = require('gulp'),
     babel = require('gulp-babel'),
@@ -13,39 +14,99 @@ var gulp = require('gulp'),
 
 
 
+// gulp.task('__build', ['clean', 'less', 'js'], function() {
+// 	'use strict';
+//     var buildCss = gulp.src([
+//         'src/css/main.css',
+//         'src/css/libs.min.css'
+//         ])
+//     .pipe(gulp.dest('dist/css'));
 
+//     var buildImg = gulp.src('src/img/**/*')
+//     .pipe(gulp.dest('dist/img'));
+
+//     var buildFonts = gulp.src('src/fonts/**/*')
+//     .pipe(gulp.dest('dist/fonts'));
+
+//     var buildJs = gulp.src('src/js/**/*')
+//     .pipe(gulp.dest('dist/js'));
+
+//     var buildHtml = gulp.src('src/*.html')
+//     .pipe(gulp.dest('dist'));
+// });
+
+
+/*
+    clean
+    bundle
+    delete
+    rename
+    final-delete
+    build
+*/
+
+
+// 0
 gulp.task('clean', function() {
-	'use strict';
-    return del.sync(['dist']);
+    return del.sync('dist'); // Удаляем папку dist перед сборкой
+    // return del.sync(['dist']);
 });
 
-gulp.task('build', ['clean', 'less', 'js'], function() {
-	'use strict';
-    var buildCss = gulp.src([
-        'src/css/main.css',
-        'src/css/libs.min.css'
-        ])
-    .pipe(gulp.dest('dist/css'));
+// 1
+gulp.task('bundle', ['clean'], function() {
+    var buildCss = gulp.src('./src/css/**/*')
+        .pipe(gulp.dest('./dist/css'));
 
-    var buildImg = gulp.src('src/img/**/*')
-    .pipe(gulp.dest('dist/img'));
+    var buildImg = gulp.src('./src/img/**/*')
+        .pipe(gulp.dest('./dist/img'));
 
-    var buildFonts = gulp.src('src/fonts/**/*')
-    .pipe(gulp.dest('dist/fonts'));
+    var buildFonts = gulp.src('./src/fonts/**/*')
+        .pipe(gulp.dest('./dist/fonts'));
 
-    var buildJs = gulp.src('src/js/**/*')
-    .pipe(gulp.dest('dist/js'));
+    var buildJs = gulp.src('./src/js/**/*')
+        .pipe(gulp.dest('./dist/js'));
 
-    var buildHtml = gulp.src('src/*.html')
-    .pipe(gulp.dest('dist'));
+    var buildVendorJs = gulp.src('./src/libs/**/*')
+        .pipe(gulp.dest('./dist/libs'));
 
-    var buildPhp = gulp.src('src/*.php')
-    .pipe(gulp.dest('dist'));
-
+    var buildHtml = gulp.src('./src/*.html')
+        .pipe(gulp.dest('./dist'));
 });
+
+// 2
+gulp.task('delete', function() {
+    gulp.src(['dist/src/environments/environment.js', 'dist/src/js/main.js'], {read: false})
+        .pipe(clean());
+});
+
+// 3
+// gulp.task('rename', ['delete'], function() {
+gulp.task('rename', function() {
+    gulp.src('./dist/src/environments/environment.prod.js')
+        .pipe(rename('environment.js'))
+        .pipe(gulp.dest('./dist/src/environments'));
+
+    gulp.src('./dist/src/js/app.js')
+        .pipe(rename('main.js'))
+        .pipe(gulp.dest('./dist/src/js'));
+});
+
+// 4
+gulp.task('final-delete', ['rename'], function() {
+    gulp.src(['dist/src/environments/environment.prod.js', 'dist/src/js/app.js'], {read: false})
+        .pipe(clean());
+});
+
+// 5
+gulp.task('build', ['final-delete'], function() {});
+
+
+
+
+
+
 
 gulp.task('browser-sync', function() {
-	'use strict';
 	browserSync({
 		server: {
 			baseDir: 'src'
@@ -75,7 +136,8 @@ gulp.task('less', function() {
 gulp.task('js', function() {
 	'use strict';
 	return gulp.src([
-				'src/js/*.js', '!src/js/app.js'
+                // 'src/js/*.js', '!src/js/app.js'
+				'src/js/main.js'
 			])
 			.pipe(babel())
 			.pipe(concat('app.js'))

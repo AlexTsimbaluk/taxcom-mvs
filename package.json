@@ -21,7 +21,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "dist": "npm run gulp bundle && npm run gulp delete && npm run gulp build",
+    "build": "npm run gulp bundle"
   },
   "author": "",
   "license": "ISC"
