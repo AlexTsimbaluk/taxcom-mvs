@@ -105,27 +105,24 @@ gulp.task('less', function() {
 
 gulp.task('js', () => {
 	return gulp.src([
-            // 'src/js/*.js', '!src/js/app.js'
 			'src/js/main.js'
 		])
 		.pipe(babel())
 		.pipe(concat('app.js'))
 		.pipe(gulp.dest('src/js'))
-		.pipe(browserSync.reload({stream: true}));
+		.pipe(browserSync.reload({stream: true}))
+    ;
 });
 
-// gulp.task('js-min', gulp.series('js', () => {
 gulp.task('js-min', () => {
 	return gulp.src([
             'src/js/app.js'
         ])
 		.pipe(rename('app.min.js'))
 		.pipe(uglify())
-		.pipe(gulp.dest('src/js'));
-
-    // done();
+		.pipe(gulp.dest('src/js'))
+    ;
 });
-// }));
 
 
 gulp.task('watch', function() {
@@ -133,11 +130,9 @@ gulp.task('watch', function() {
 
     gulp.watch(
     	[
-            // 'src/js/*.js', '!src/js/app.js'
     		'src/js/main.js'
     	],
         gulp.series('js', 'js-min')
-        // gulp.series('js-min')
     );
 
     gulp.watch(
