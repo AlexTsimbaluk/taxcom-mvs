@@ -47,13 +47,15 @@ var gulp = require('gulp'),
 
 
 // 0
-gulp.task('clean', function() {
-    return del.sync('dist'); // Удаляем папку dist перед сборкой
-    // return del.sync(['dist']);
+// Удаляем папку dist перед сборкой
+// gulp.task('clean', (done) => {
+gulp.task('clean', () => {
+    return del(['dist']);
+    // done();
 });
 
 // 1
-gulp.task('bundle', ['clean'], function() {
+gulp.task('bundle', gulp.series('clean', (done) => {
     var buildCss = gulp.src('./src/css/**/*')
         .pipe(gulp.dest('./dist/css'));
 
@@ -71,17 +73,18 @@ gulp.task('bundle', ['clean'], function() {
 
     var buildHtml = gulp.src('./src/*.html')
         .pipe(gulp.dest('./dist'));
-});
+
+    done();
+}));
 
 // 2
-gulp.task('delete', function() {
+/*gulp.task('delete', function() {
     gulp.src(['dist/src/environments/environment.js', 'dist/src/js/main.js'], {read: false})
         .pipe(clean());
-});
+});*/
 
 // 3
-// gulp.task('rename', ['delete'], function() {
-gulp.task('rename', function() {
+/*gulp.task('rename', function() {
     gulp.src('./dist/src/environments/environment.prod.js')
         .pipe(rename('environment.js'))
         .pipe(gulp.dest('./dist/src/environments'));
@@ -89,24 +92,19 @@ gulp.task('rename', function() {
     gulp.src('./dist/src/js/app.js')
         .pipe(rename('main.js'))
         .pipe(gulp.dest('./dist/src/js'));
-});
+});*/
 
 // 4
-gulp.task('final-delete', ['rename'], function() {
+/*gulp.task('final-delete', gulp.series('rename', function() {
     gulp.src(['dist/src/environments/environment.prod.js', 'dist/src/js/app.js'], {read: false})
         .pipe(clean());
-});
+}));*/
 
 // 5
-gulp.task('build', ['final-delete'], function() {});
+// gulp.task('build', gulp.series('final-delete', function() {}));
 
 
-
-
-
-
-
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', () => {
 	browserSync({
 		server: {
 			baseDir: 'src'
@@ -115,6 +113,11 @@ gulp.task('browser-sync', function() {
 		notify: false,
 		ghostMode: false
 	});
+});
+
+gulp.task('html', function() {
+    return gulp.src('src/*.html')
+        .pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('less', function() {
@@ -154,21 +157,23 @@ gulp.task('js-min', function() {
 });
 
 
-gulp.task('watch', ['browser-sync'], function() {
-	'use strict';
-	gulp.watch('src/*.html', browserSync.reload);
+gulp.task('watch', function() {
+	gulp.watch('src/*.html', gulp.series('html'));
 
     gulp.watch(
     	[
     		'src/js/*.js', '!src/js/app.js'
     	],
-    	['js']
-	);
+        gulp.series('js')
+    );
 
-	gulp.watch([
-			'src/less/*.less'
-		], ['less']);
+    gulp.watch(
+        [
+            'src/less/*.less'
+        ],
+        gulp.series('less')
+    );
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', gulp.parallel('watch', 'browser-sync'));
 
