@@ -87,20 +87,28 @@ gulp.task('html', function() {
         .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('less', function() {
+gulp.task('less', () => {
 	'use strict';
 	return gulp.src('src/less/main.less')
-			.pipe(less())
-			.pipe(autoprefixer(
-				['last 15 versions', '> 1%', 'ie 8', 'ie 7'],
-				{ cascade: true })
-			)
-			// TODO - починить минификацию
-			/*.pipe(gulp.dest('src/css/'))
-			.pipe(concat('main.min.css'))
-	        .pipe(cssnano())*/
-			.pipe(gulp.dest('src/css/'))
-			.pipe(browserSync.reload({stream: true}));
+		.pipe(less())
+		.pipe(autoprefixer(
+			['last 15 versions', '> 1%', 'ie 8', 'ie 7'],
+			{ cascade: true })
+		)
+		.pipe(gulp.dest('src/css/'))
+        .pipe(browserSync.reload({stream: true}))
+    ;
+});
+
+gulp.task('css-min', () => {
+    return gulp.src([
+            'src/css/main.css'
+        ])
+        .pipe(rename('main.min.css'))
+        .pipe(cssnano())
+        .pipe(gulp.dest('src/css'))
+		.pipe(browserSync.reload({stream: true}))
+    ;
 });
 
 gulp.task('js', () => {
@@ -139,7 +147,7 @@ gulp.task('watch', function() {
         [
             'src/less/*.less'
         ],
-        gulp.series('less')
+        gulp.series('less', 'css-min')
     );
 });
 
