@@ -13,39 +13,6 @@ var gulp = require('gulp'),
 	;
 
 
-
-// gulp.task('__build', ['clean', 'less', 'js'], function() {
-// 	'use strict';
-//     var buildCss = gulp.src([
-//         'src/css/main.css',
-//         'src/css/libs.min.css'
-//         ])
-//     .pipe(gulp.dest('dist/css'));
-
-//     var buildImg = gulp.src('src/img/**/*')
-//     .pipe(gulp.dest('dist/img'));
-
-//     var buildFonts = gulp.src('src/fonts/**/*')
-//     .pipe(gulp.dest('dist/fonts'));
-
-//     var buildJs = gulp.src('src/js/**/*')
-//     .pipe(gulp.dest('dist/js'));
-
-//     var buildHtml = gulp.src('src/*.html')
-//     .pipe(gulp.dest('dist'));
-// });
-
-
-/*
-    clean
-    bundle
-    delete
-    rename
-    final-delete
-    build
-*/
-
-
 // 0
 // Удаляем папку dist перед сборкой
 // gulp.task('clean', (done) => {
@@ -136,25 +103,29 @@ gulp.task('less', function() {
 			.pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('js', function() {
-	'use strict';
+gulp.task('js', () => {
 	return gulp.src([
-                // 'src/js/*.js', '!src/js/app.js'
-				'src/js/main.js'
-			])
-			.pipe(babel())
-			.pipe(concat('app.js'))
-			.pipe(gulp.dest('src/js'))
-			.pipe(browserSync.reload({stream: true}));
+            // 'src/js/*.js', '!src/js/app.js'
+			'src/js/main.js'
+		])
+		.pipe(babel())
+		.pipe(concat('app.js'))
+		.pipe(gulp.dest('src/js'))
+		.pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('js-min', function() {
-	'use strict';
-	return gulp.src('src/js/app.js')
-			.pipe(rename('app.min.js'))
-			.pipe(uglify())
-			.pipe(gulp.dest('src/js'));
+// gulp.task('js-min', gulp.series('js', () => {
+gulp.task('js-min', () => {
+	return gulp.src([
+            'src/js/app.js'
+        ])
+		.pipe(rename('app.min.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest('src/js'));
+
+    // done();
 });
+// }));
 
 
 gulp.task('watch', function() {
@@ -162,9 +133,11 @@ gulp.task('watch', function() {
 
     gulp.watch(
     	[
-    		'src/js/*.js', '!src/js/app.js'
+            // 'src/js/*.js', '!src/js/app.js'
+    		'src/js/main.js'
     	],
-        gulp.series('js')
+        gulp.series('js', 'js-min')
+        // gulp.series('js-min')
     );
 
     gulp.watch(

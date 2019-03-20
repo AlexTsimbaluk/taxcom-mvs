@@ -80,7 +80,6 @@ $(window).on('load', function () {
     function initPhoneMask() {
         if (!$('[data-mask="phone"]').length) return;
 
-        // var phoneMaskInput = new Cleave('[data-mask=phone]', {
         phoneMaskInput = new Cleave('[data-mask=phone]', {
             phone: true,
             phoneRegionCode: 'RU'
